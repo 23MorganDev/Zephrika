@@ -1,145 +1,235 @@
 import React from 'react';
-import {
-  Typography,
-  Button,
-  Box,
-  Grid2,
-  Container,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Divider,
-  useTheme,
-  Avatar, // For team member images
-  Paper, // For card-like sections
-} from '@mui/material';
-import {
-  CheckCircleOutline,
-  LightbulbOutlined,
-  RocketLaunchOutlined,
-  GroupOutlined,
-  VisibilityOutlined,
-} from '@mui/icons-material';
-import aboutImage from '../../assets/images/c1.jpg'; // Replace with a more modern/relevant image
-import teamImage1 from '../../assets/images/c1.jpg'; // Example team image
-import teamImage2 from '../../assets/images/c1.jpg'; // Example team image
-
-const darkBackground = '#1a2027';
-const lightText = '#e5e7eb';
-const mediumText = '#9ca3af';
+import { Box, Typography, useTheme } from '@mui/material';
+import backgroundImage from "../../assets/images/Zeph.jpg";
 
 function AboutPage() {
   const theme = useTheme();
 
+  const teamMembers = [
+    { name: 'Morgan Muthee', role: 'Chief Maverick & Founder' },
+    { name: 'Stanley Maina', role: 'Chief Operating Officer (COO)' },
+    { name: 'Lucky Kathumo', role: 'Lead Designer' },
+    //{ name: 'Sharon Muli', role: 'Head Of Marketing and Business Relations' },
+
+
+  ];
+
   return (
-    <Box sx={{ backgroundColor: darkBackground, color: lightText, py: 10 }}>
-      <Container maxWidth="lg">
-        <Typography variant="h2" component="h1" gutterBottom sx={{ color: theme.palette.secondary.main, fontWeight: 700, textAlign: 'center' }}>
-          About <Typography component="span" sx={{ color: theme.palette.secondary.main, fontWeight: 'bold' }}>Zephrika Technologies</Typography>
+    <Box display="flex" flexDirection="column">
+      {/* Hero Section */}
+      <Box
+        sx={{
+          position: 'relative',
+          height: { xs: '350px', md: '500px' },
+          overflow: 'hidden',
+          mb: 4,
+        }}
+      >
+        <Box
+          sx={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            position: 'absolute',
+            inset: 0,
+            zIndex: -1,
+            transition: theme.transitions.create('transform', {
+              duration: 6000,
+              easing: theme.transitions.easing.easeInOut,
+            }),
+            '&:hover': { transform: 'scale(1.05)' },
+          }}
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Typography
+            variant="h2"
+            sx={{
+              ...theme.typography.h2,
+              color: theme.palette.common.white,
+              fontWeight: 800,
+              textAlign: 'center',
+              textShadow: theme.shadows[6],
+              fontSize: { xs: '2rem', md: 'clamp(2.5rem, 6vw, 70px)' },
+            }}
+          >
+            About Us
+          </Typography>
+        </Box>
+      </Box>
+
+      {/* Who We Are */}
+      <Box
+        sx={{
+          background: theme.palette.gradients.surface,
+          color: theme.palette.text.primary,
+          py: { xs: 4, md: 6 },
+          px: { xs: 2, md: 6 },
+          textAlign: 'center',
+        }}
+      >
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{
+            ...theme.typography.h4,
+            color: theme.palette.primary.main,
+            fontWeight: 700,
+          }}
+        >
+          Who We Are
         </Typography>
-        <Typography variant="h6" color={mediumText} paragraph sx={{ textAlign: 'center' }}>
-          Igniting a technological renaissance in Africa.
+        <Typography
+          sx={{
+            maxWidth: 900,
+            mx: 'auto',
+            fontSize: { xs: '1rem', md: '1.2rem' },
+            lineHeight: 1.7,
+            color: theme.palette.text.secondary,
+          }}
+        >
+          Zephrika Technologies is a forward-thinking technology company dedicated
+          to helping businesses establish powerful digital footprints. We craft
+          modern websites, scalable applications, and digital solutions that blend
+          innovation with reliability.
         </Typography>
-        <Grid2 container spacing={6} alignItems="center" sx={{ mb: 8 }}>
-          <Grid2 item xs={12} md={6}>
-            <Typography variant="body1" paragraph>
-              Founded with a powerful vision to spark a technological renaissance across Africa, Zephrika Technologies is a
-              <Typography component="span" sx={{ color: theme.palette.secondary.main, fontWeight: 'bold' }}> solution-oriented startup</Typography> dedicated to crafting impactful, scalable, and innovative
-              digital solutions for micro, small, and medium enterprises (MSMEs).
-            </Typography>
-            <Typography variant="body1" paragraph>
-              Our core belief lies in the transformative power of <Typography component="span" sx={{ color: theme.palette.secondary.main, fontWeight: 'bold' }}>technology and knowledge</Typography> to elevate
-              African businesses onto the global stage. We are driven by a deep commitment to contribute to sustainable
-              development and foster a tech-driven ecosystem rooted in <Typography component="span" sx={{ color: theme.palette.secondary.main, fontWeight: 'bold' }}>African identity</Typography> while embracing
-              global standards of excellence.
-            </Typography>
-            <Button variant="contained" color="secondary" size="large" sx={{ mt: 3 }}>
-              Explore Our Solutions
-            </Button>
-          </Grid2>
-          <Grid2 item xs={12} md={6}>
+      </Box>
+
+      {/* Vision & Mission */}
+      <Box
+        sx={{
+          background: theme.palette.gradients.primary,
+          color: theme.palette.common.white,
+          py: { xs: 4, md: 6 },
+          px: { xs: 2, md: 6 },
+          textAlign: 'center',
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            gap: 3,
+            maxWidth: 1200,
+            mx: 'auto',
+          }}
+        >
+          {[
+            { title: "Our Vision", text: "To be a globally recognized leader in digital innovation, empowering businesses to thrive through cutting-edge technology and sustainable solutions." },
+            { title: "Our Mission", text: "To empower businesses by delivering tailored, innovative, and scalable digital solutions that drive growth, engagement, and long-term success." }
+          ].map((item, i) => (
             <Box
-              component="img"
-              src={aboutImage}
-              alt="About Zephrika Technologies"
-              sx={{ maxWidth: '100%', height: 'auto', borderRadius: theme.shape.borderRadius, boxShadow: theme.shadows[8] }}
-            />
-          </Grid2>
-        </Grid2>
-
-        <Paper sx={{ py: 8, px: 3, backgroundColor: '#2d3748', color: lightText, borderRadius: theme.shape.borderRadius, mb: 8 }}>
-          <Typography variant="h4" sx={{ fontWeight: 700, marginBottom: 4, color: theme.palette.secondary.main, textAlign: 'center' }}>
-            Our Core Values
-          </Typography>
-          <List>
-            <ListItem>
-              <ListItemIcon><LightbulbOutlined color="secondary" /></ListItemIcon>
-              <ListItemText primary={<Typography variant="subtitle1"><Typography component="span" sx={{ color: theme.palette.secondary.main, fontWeight: 'bold' }}>Innovation:</Typography> We champion creative solutions and continuous improvement.</Typography>} />
-            </ListItem>
-            <Divider light />
-            <ListItem>
-              <ListItemIcon><RocketLaunchOutlined color="secondary" /></ListItemIcon>
-              <ListItemText primary={<Typography variant="subtitle1"><Typography component="span" sx={{ color: theme.palette.secondary.main, fontWeight: 'bold' }}>Impact:</Typography> We are committed to delivering solutions that create meaningful change.</Typography>} />
-            </ListItem>
-            <Divider light />
-            <ListItem>
-              <ListItemIcon><GroupOutlined color="secondary" /></ListItemIcon>
-              <ListItemText primary={<Typography variant="subtitle1"><Typography component="span" sx={{ color: theme.palette.secondary.main, fontWeight: 'bold' }}>Collaboration:</Typography> We believe in the power of teamwork and partnership.</Typography>} />
-            </ListItem>
-            <Divider light />
-            <ListItem>
-              <ListItemIcon><VisibilityOutlined color="secondary" /></ListItemIcon>
-              <ListItemText primary={<Typography variant="subtitle1"><Typography component="span" sx={{ color: theme.palette.secondary.main, fontWeight: 'bold' }}>Vision:</Typography> We strive for the highest standards in everything we do.</Typography>} />
-            </ListItem>
-            <Divider light />
-            <ListItem>
-              <ListItemIcon><CheckCircleOutline color="secondary" /></ListItemIcon>
-              <ListItemText primary={<Typography variant="subtitle1"><Typography component="span" sx={{ color: theme.palette.secondary.main, fontWeight: 'bold' }}>Integrity:</Typography> We operate with transparency and ethical practices.</Typography>} />
-            </ListItem>
-          </List>
-        </Paper>
-
-        <Box sx={{ py: 8 }}>
-          <Typography variant="h4" sx={{ fontWeight: 700, marginBottom: 4, color: theme.palette.secondary.main, textAlign: 'center' }}>
-            Meet Our Team
-          </Typography>
-          <Typography variant="body1" color={mediumText} textAlign="center" marginBottom={4}>
-            A passionate group of innovators and problem-solvers dedicated to the Zephrika vision.
-          </Typography>
-          <Grid2 container spacing={4} justifyContent="center">
-            <Grid2 item xs={12} sm={6} md={4}>
-              <Paper sx={{ p: 3, backgroundColor: '#374151', borderRadius: theme.shape.borderRadius, textAlign: 'center', boxShadow: theme.shadows[4] }}>
-                <Avatar alt="Morgan Muthee" src={teamImage1} sx={{ width: 80, height: 80, borderRadius: '50%', objectFit: 'cover', mb: 1, mx: 'auto' }} />
-                <Typography variant="h6" color={lightText} gutterBottom>Morgan Muthee</Typography>
-                <Typography variant="subtitle2" color={mediumText}>Founder, CEO & CTO</Typography>
-                {/* Add social media links or brief bio here if needed */}
-              </Paper>
-            </Grid2>
-            <Grid2 item xs={12} sm={6} md={4}>
-              <Paper sx={{ p: 3, backgroundColor: '#374151', borderRadius: theme.shape.borderRadius, textAlign: 'center', boxShadow: theme.shadows[4] }}>
-                <Avatar alt="Jane Smith" src={teamImage2} sx={{ width: 80, height: 80, borderRadius: '50%', objectFit: 'cover', mb: 1, mx: 'auto' }} />
-                <Typography variant="h6" color={lightText} gutterBottom>Jane Smith</Typography>
-                <Typography variant="subtitle2" color={mediumText}>COO</Typography>
-                {/* Add social media links or brief bio here if needed */}
-              </Paper>
-            </Grid2>
-            {/* Add more team members here */}
-          </Grid2>
+              key={i}
+              sx={{
+                flex: 1,
+                p: 3,
+                borderRadius: 3,
+                backgroundColor: 'rgba(0,0,0,0.25)',
+                boxShadow: theme.shadows[3],
+                transition: theme.transitions.create('transform', {
+                  duration: 500,
+                }),
+                '&:hover': { transform: 'translateY(-4px)' },
+              }}
+            >
+              <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>
+                {item.title}
+              </Typography>
+              <Typography variant="body1" sx={{ lineHeight: 1.7 }}>
+                {item.text}
+              </Typography>
+            </Box>
+          ))}
         </Box>
+      </Box>
 
-        {/* Optional: A section about your vision for Africa */}
-        <Box sx={{ py: 8, textAlign: 'center' }}>
-          <Typography variant="h4" sx={{ fontWeight: 700, marginBottom: 4, color: theme.palette.secondary.main }}>
-            Our Vision for Africa
-          </Typography>
-          <Typography variant="body1" paragraph color={mediumText}>
-            We envision an Africa where technology empowers every business, bridging gaps and fostering sustainable growth.
-            Zephrika Technologies is committed to being a catalyst in this transformation, driving innovation and
-            creating opportunities for African entrepreneurs to thrive in the digital age.
-          </Typography>
+      {/* Meet Our Team */}
+      <Box
+        sx={{
+          background: theme.palette.gradients.surfaceAlt,
+          py: { xs: 4, md: 6 },
+          textAlign: 'center',
+        }}
+      >
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{
+            color: theme.palette.primary.main,
+            fontWeight: 700,
+          }}
+        >
+          Meet Our Team
+        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 4,
+            mt: 4,
+          }}
+        >
+          {teamMembers.map((member, index) => (
+            <Box
+              key={index}
+              sx={{
+                width: { xs: '100%', sm: '45%', md: '285px' },
+                textAlign: 'center',
+              }}
+            >
+              <Box
+                sx={{
+                  height: 350,
+                  borderRadius: 3,
+                  overflow: 'hidden',
+                  boxShadow: theme.shadows[4],
+                  transition: theme.transitions.create('transform', {
+                    duration: 400,
+                  }),
+                  '&:hover': { transform: 'scale(1.03)' },
+                }}
+              >
+                <img
+                  src={backgroundImage}
+                  alt={member.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
+              <Typography
+                variant="h6"
+                sx={{
+                  color: theme.palette.primary.main,
+                  fontWeight: 'bold',
+                  mt: 2,
+                }}
+              >
+                {member.name}
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: theme.palette.text.secondary,
+                }}
+              >
+                {member.role}
+              </Typography>
+            </Box>
+          ))}
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 }

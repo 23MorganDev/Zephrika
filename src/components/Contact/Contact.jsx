@@ -1,154 +1,263 @@
-import React from 'react';
-import { styled } from '@mui/material/styles';
+import React from "react";
 import {
-    Typography,
-    Container,
-    Grid2 as Grid,
-    Box,
-    List,
-    ListItem,
-    ListItemText,
-    Link,
-    Divider,
-    IconButton
-} from '@mui/material';
-import {
-    LocationOn,
-    Phone,
-    Email,
-    Facebook,
-    Twitter,
-    Instagram,
-    Telegram
-} from '@mui/icons-material';
-import contactImage from "../../assets/images/c2.jpg";
+  Box,
+  Typography,
+  Card,
+  Grid,
+  Container,
+  TextField,
+  Button,
+} from "@mui/material";
+import { Send } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
+import backgroundImage from "../../assets/images/Zeph.jpg";
+import { motion } from "framer-motion";
 
-const primaryAccent = '#00BFFF';
+function ContactPage() {
+  const theme = useTheme();
 
-const ContactInfoContainer = styled(Box)(({ theme }) => ({
-    backgroundColor: '#161A5C', // Alternative Background
-    padding: theme.spacing(6, 0),
-    color: '#FFFFFF', // Text Color (Secondary)
-}));
-
-const ContactInfoGrid = styled(Grid)(({ theme }) => ({
-    padding: theme.spacing(4),
-}));
-
-const SocialIcons = styled(Box)(({ theme }) => ({
-    marginTop: theme.spacing(3),
-    display: 'flex',
-    justifyContent: 'flex-start',
-    gap: theme.spacing(2),
-    '& svg': {
-        color: primaryAccent,
-        fontSize: '1.8rem',
+  const contactInfo = [
+    {
+      title: "Location",
+      details: "Zephrika Technology Center\nNairobi, Kenya",
+      icon: "fas fa-map-marker-alt",
     },
-}));
+    {
+      title: "24/7 Support",
+      details: "+254 700 000 000\n+254 700 000 001",
+      icon: "fas fa-phone-alt",
+    },
+    {
+      title: "Drop Us a Line",
+      details: "inquiries@zephrikatechnologies.com",
+      icon: "fas fa-envelope",
+    },
+    {
+      title: "Office Hours",
+      details: "Mon–Fri: 9 AM - 5 PM\nSat: 10 AM - 2 PM\nSunday: Closed",
+      icon: "fas fa-clock",
+    },
+  ];
 
-function ContactInformation() {
-    return (
-        <ContactInfoContainer>
-            <Container maxWidth="lg">
-                <Grid container spacing={3}>
-                    <ContactInfoGrid xs={12} md={4}>
-                        <Typography variant="h6" gutterBottom sx={{ color: primaryAccent }}>
-                            Zephrika Technology
-                        </Typography>
-                        <Typography variant="body2" paragraph sx={{color: '#FFFFFF'}}>
-                            We are a leading technology company dedicated to providing innovative solutions for businesses of all sizes.
-                        </Typography>
-                        <img
-                            src={contactImage}
-                            alt="Company"
-                            style={{ maxWidth: '100%', height: 'auto', marginTop: '16px', borderRadius: '8px' }}
-                        />
-                    </ContactInfoGrid>
+  return (
+    <Box display="flex" flexDirection="column" sx={{ mt: 0 }}>
+      {/* HERO SECTION */}
+      <Box
+        sx={{
+          position: "relative",
+          height: "500px",
+          width: "100%",
+          overflow: "hidden",
+          mb: 4,
+        }}
+      >
+        <Box
+          sx={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "absolute",
+            inset: 0,
+            zIndex: -1,
+          }}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            background: theme.palette.gradients.overlay,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            variant="h3"
+            sx={{
+              fontFamily: "Georgia, serif",
+              fontStyle: "italic",
+              fontSize: "clamp(2.5rem, 7vw, 65px)",
+              color: theme.palette.primary.contrastText,
+              fontWeight: 800,
+              textAlign: "center",
+            }}
+          >
+            Contact Us
+          </Typography>
+        </Box>
+      </Box>
 
-                    <ContactInfoGrid xs={12} md={4}>
-                        <Typography variant="h6" gutterBottom sx={{ color: primaryAccent }}>
-                            Useful Links
-                        </Typography>
-                        <List>
-                            <ListItem disablePadding>
-                                <ListItemText>
-                                    <Link href="#" color="inherit" sx={{color: '#FFFFFF'}}>
-                                        Home
-                                    </Link>
-                                </ListItemText>
-                            </ListItem>
-                            <ListItem disablePadding>
-                                <ListItemText>
-                                    <Link href="#" color="inherit" sx={{color: '#FFFFFF'}}>
-                                        Services
-                                    </Link>
-                                </ListItemText>
-                            </ListItem>
-                            <ListItem disablePadding>
-                                <ListItemText>
-                                    <Link href="#" color="inherit" sx={{color: '#FFFFFF'}}>
-                                        About Us
-                                    </Link>
-                                </ListItemText>
-                            </ListItem>
-                            <ListItem disablePadding>
-                                <ListItemText>
-                                    <Link href="#" color="inherit" sx={{color: '#FFFFFF'}}>
-                                        Contact Us
-                                    </Link>
-                                </ListItemText>
-                            </ListItem>
-                        </List>
+      {/* CONTACT SECTION */}
+      <Container
+        sx={{
+          py: 10,
+          background: theme.palette.background.default,
+          position: "relative",
+        }}
+      >
+        <Box sx={{ position: "relative", zIndex: 1 }}>
+          {/* HEADING */}
+          <Box sx={{ textAlign: "center", mb: 6 }}>
+            <Typography
+              variant="h4"
+              sx={{
+                fontWeight: 700,
+                mb: 2,
+                color: theme.palette.primary.main,
+                fontFamily: "Georgia, serif",
+              }}
+            >
+              Contact & Join The Movement
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                maxWidth: 700,
+                mx: "auto",
+                color: theme.palette.text.secondary,
+                fontSize: "1.1rem",
+              }}
+            >
+              Join our expanding network of satisfied clients and take your brand
+              to the next level with our expert digital solutions. Get in touch
+              with us today to discuss how we can bring your vision to life and
+              create impactful digital experiences together!
+            </Typography>
+          </Box>
 
-                        <Typography variant="h6" gutterBottom sx={{ color: primaryAccent, marginTop: 3 }}>
-                            Connect With Us
-                        </Typography>
-                        <SocialIcons>
-                            <IconButton href="#" aria-label="Facebook">
-                                <Facebook />
-                            </IconButton>
-                            <IconButton href="#" aria-label="Twitter">
-                                <Twitter />
-                            </IconButton>
-                            <IconButton href="#" aria-label="Instagram">
-                                <Instagram />
-                            </IconButton>
-                            <IconButton href="#" aria-label="Telegram">
-                                <Telegram />
-                            </IconButton>
-                            <IconButton href="mailto:info@zephrika.com" aria-label="Email">
-                                <Email />
-                            </IconButton>
-                        </SocialIcons>
-                    </ContactInfoGrid>
+          {/* CONTACT CARDS */}
+          <Grid container spacing={4} justifyContent="center" sx={{ mb: 8 }}>
+            {contactInfo.map((item, index) => (
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  <Card
+                    sx={{
+                      height: "100%",
+                      borderRadius: 4,
+                      backdropFilter: "blur(8px)",
+                      background: theme.palette.gradients.card,
+                      color: theme.palette.text.primary,
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+                      textAlign: "center",
+                      p: 4,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        transform: "translateY(-8px)",
+                        boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
+                      },
+                    }}
+                  >
+                    <i
+                      className={`${item.icon} fa-2x`}
+                      style={{ color: theme.palette.primary.main }}
+                    />
+                    <Typography
+                      variant="h6"
+                      sx={{ fontWeight: 600, mt: 2, mb: 1 }}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        whiteSpace: "pre-line",
+                        color: theme.palette.text.secondary,
+                      }}
+                    >
+                      {item.details}
+                    </Typography>
+                  </Card>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
 
-                    <ContactInfoGrid xs={12} md={4}>
-                        <Typography variant="h6" gutterBottom sx={{ color: primaryAccent }}>
-                            Contact Us
-                        </Typography>
-                        <List>
-                            <ListItem disablePadding sx={{color: '#FFFFFF'}}>
-                                <LocationOn sx={{ marginRight: 1, color: primaryAccent }} />
-                                <ListItemText primary="123 Main Street, City, Country" />
-                            </ListItem>
-                            <ListItem disablePadding sx={{color: '#FFFFFF'}}>
-                                <Phone sx={{ marginRight: 1, color: primaryAccent }} />
-                                <ListItemText primary="+1 123 456 7890" />
-                            </ListItem>
-                            <ListItem disablePadding sx={{color: '#FFFFFF'}}>
-                                <Email sx={{ marginRight: 1, color: primaryAccent }} />
-                                <ListItemText primary="info@zephrika.com" />
-                            </ListItem>
-                        </List>
-                    </ContactInfoGrid>
+          {/* CONTACT FORM */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <Box
+              sx={{
+                background: theme.palette.background.paper,
+                borderRadius: 4,
+                p: { xs: 4, md: 6 },
+                boxShadow: 6,
+                maxWidth: 900,
+                mx: "auto",
+              }}
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  fontWeight: 700,
+                  mb: 3,
+                  textAlign: "center",
+                  color: theme.palette.primary.main,
+                }}
+              >
+                Send Us a Message
+              </Typography>
+
+              <Grid container spacing={3}>
+                <Grid item xs={12} md={6}>
+                  <TextField label="Full Name" fullWidth required />
                 </Grid>
-                <Divider sx={{ mt: 4, backgroundColor: primaryAccent }} />
-                <Typography variant="body2" align="center" sx={{ pt: 2, color: '#FFFFFF' }}>
-                    © {new Date().getFullYear()} Zephrika Technology. All rights reserved.
-                </Typography>
-            </Container>
-        </ContactInfoContainer>
-    );
+                <Grid item xs={12} md={6}>
+                  <TextField label="Email Address" type="email" fullWidth required />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <TextField label="Phone Number" type="tel" fullWidth />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <TextField label="Subject" fullWidth />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Your Message"
+                    multiline
+                    rows={5}
+                    fullWidth
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12} textAlign="center">
+                  <Button
+                    variant="contained"
+                    size="large"
+                    endIcon={<Send />}
+                    sx={{
+                      px: 5,
+                      py: 1.5,
+                      borderRadius: "50px",
+                      fontSize: "1.1rem",
+                      fontWeight: 600,
+                      background: theme.palette.gradients.primary,
+                      color: theme.palette.primary.contrastText,
+                      "&:hover": {
+                        background: theme.palette.gradients.primaryHover,
+                      },
+                    }}
+                  >
+                    Send Message
+                  </Button>
+                </Grid>
+              </Grid>
+            </Box>
+          </motion.div>
+        </Box>
+      </Container>
+    </Box>
+  );
 }
 
-export default ContactInformation;
+export default ContactPage;

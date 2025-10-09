@@ -5,7 +5,7 @@ import {
     Typography,
     Button,
     Box,
-    Grid2 as Grid,
+    Grid,
     Card,
     CardMedia,
     CardContent,
