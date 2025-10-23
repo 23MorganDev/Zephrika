@@ -1,4 +1,4 @@
-// src/theme.js
+
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -25,10 +25,10 @@ const theme = createTheme({
       gradient: "linear-gradient(135deg, #3d1f79ff 0%, #013064 100%)",
     },
 
-    // ✅ Extended gradients
+    // Extended gradients
     gradients: {
       primary: "linear-gradient(90deg, #4B2E83, #013064)",
-      primaryHover: "linear-gradient(90deg, #5A4FCF, #1B398F)", // Added
+      primaryHover: "linear-gradient(90deg, #5A4FCF, #1B398F)",
       secondary: "linear-gradient(135deg, #013064, #4B2E83)",
       accent: "linear-gradient(90deg, #4B2E83 0%, #5A4FCF 50%, #013064 100%)",
       sectionLight: "linear-gradient(180deg, #f9fafc 0%, #ffffff 100%)",
@@ -36,7 +36,7 @@ const theme = createTheme({
       surface: "linear-gradient(135deg, #FFFFFF 0%, #f7f7f7 100%)",
       surfaceAlt: "linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%)",
 
-      // 🆕 Added for Hero/Contact consistency
+
       card: "linear-gradient(145deg, rgba(255,255,255,0.85), rgba(255,255,255,0.65))",
       overlay: "linear-gradient(180deg, rgba(19,19,31,0.6), rgba(19,19,31,0.7))",
 
@@ -132,5 +132,10 @@ const theme = createTheme({
     },
   },
 });
+
+while (theme.shadows.length < 25) {
+  const i = theme.shadows.length;
+  theme.shadows.push(`0px ${i}px ${i * 2}px rgba(0,0,0,0.1)`);
+}
 
 export default theme;

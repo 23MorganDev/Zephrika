@@ -10,8 +10,9 @@ import {
 } from "@mui/material";
 import { Send } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
-import backgroundImage from "../../assets/images/Zeph.jpg";
+import backgroundImage from "../../assets/images/c2.jpg";
 import { motion } from "framer-motion";
+import Footer from "../Footer/Footer.jsx";
 
 function ContactPage() {
   const theme = useTheme();
@@ -69,6 +70,7 @@ function ContactPage() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            px: 2,
           }}
         >
           <Typography
@@ -158,6 +160,7 @@ function ContactPage() {
                     <i
                       className={`${item.icon} fa-2x`}
                       style={{ color: theme.palette.primary.main }}
+                      aria-hidden
                     />
                     <Typography
                       variant="h6"
@@ -256,6 +259,8 @@ function ContactPage() {
           </motion.div>
         </Box>
       </Container>
+
+      <Footer />
     </Box>
   );
 }

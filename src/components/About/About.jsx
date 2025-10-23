@@ -6,10 +6,11 @@ function AboutPage() {
   const theme = useTheme();
 
   const teamMembers = [
-    { name: 'Morgan Muthee', role: 'Chief Maverick & Founder' },
+    { name: 'Morgan Muthee', role: 'Founder and Chief Maverick' },
     { name: 'Stanley Maina', role: 'Chief Operating Officer (COO)' },
-    { name: 'Lucky Kathumo', role: 'Lead Designer' },
-    //{ name: 'Sharon Muli', role: 'Head Of Marketing and Business Relations' },
+    { name: 'Lucky Kathumo', role: 'Lead Designer and Head of Marketing and Customer Outreach' },
+    { name: 'Felister Wanza', role: 'Web Developer and Social Media Management ' },
+    { name: 'Joseph Gicharu', role: 'AI Agents Developer'}
 
 
   ];
