@@ -5,7 +5,7 @@ import Homepage from './components/Homepage/Homepage.jsx'
 import ContactInformation from './components/Contact/Contact.jsx'
 import AboutPage from './components/About/About.jsx'
 import ServicesPage from './components/Services/Services.jsx'
-import WebDesign from './components/Services/webDesign.jsx'
+import WebDesign from './components/Services/WebDesign.jsx'
 import Footer from './components/Footer/Footer.jsx'
 
 {/*import GraphicDesign from './components/Services/graphicDesign.jsx'
