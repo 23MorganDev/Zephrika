@@ -66,11 +66,12 @@ function ContactPage() {
           sx={{
             position: "absolute",
             inset: 0,
-            background: theme.palette.gradients.overlay,
+            background: "transparent",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             px: 2,
+            zIndex: 2,
           }}
         >
           <Typography
@@ -79,7 +80,7 @@ function ContactPage() {
               fontFamily: "Georgia, serif",
               fontStyle: "italic",
               fontSize: "clamp(2.5rem, 7vw, 65px)",
-              color: theme.palette.primary.contrastText,
+              color: theme.palette.primary.main,
               fontWeight: 800,
               textAlign: "center",
             }}
@@ -93,7 +94,7 @@ function ContactPage() {
       <Container
         sx={{
           py: 10,
-          background: theme.palette.background.default,
+          background: "transparent",
           position: "relative",
         }}
       >
@@ -191,7 +192,7 @@ function ContactPage() {
           >
             <Box
               sx={{
-                background: theme.palette.background.paper,
+                background: "transparent",
                 borderRadius: 4,
                 p: { xs: 4, md: 6 },
                 boxShadow: 6,

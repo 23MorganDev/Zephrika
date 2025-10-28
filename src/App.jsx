@@ -5,18 +5,40 @@ import Homepage from './components/Homepage/Homepage.jsx'
 import ContactInformation from './components/Contact/Contact.jsx'
 import AboutPage from './components/About/About.jsx'
 import ServicesPage from './components/Services/Services.jsx'
-//import Portfolio from './components/Portfolio/Portfolio.jsx'
+import WebDesign from './components/Services/webDesign.jsx'
+import Footer from './components/Footer/Footer.jsx'
+
+{/*import GraphicDesign from './components/Services/graphicDesign.jsx'
+import DigitalMarketing from './components/Services/digitalMarketing.jsx'
+import SocialMediaManagement from './components/Services/socialMediaManagement.jsx'
+import AIAssistantsDevelopment from './components/Services/aiAssistantsDevelopment.jsx'
+import WebBasedPOSSystems from './components/Services/webBasedPOSSystems.jsx'
+import ITSupport from './components/Services/itSupport.jsx'
+import WebHosting from './components/Services/webHosting.jsx'
+import WebsiteMaintenance from './components/Services/websiteMaintenance.jsx' */}
 
 function App() {
 
   return (
-
-    <>
+  <>
       <Router>
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/services' element={<ServicesPage />} />
+
+
+          {/*SERVICES ROUTES*/}
+          <Route path='/services/web-design' element={<WebDesign />} />
+          {/*<Route path='/services/graphic-design' element={<GraphicDesign />} />
+          <Route path='/services/digital-marketing' element={<DigitalMarketing />} />
+          <Route path='/services/social-media-management' element={<SocialMediaManagement />} />
+          <Route path='/services/ai-assistants' element={<AIAssistantsDevelopment />} />
+          <Route path='/services/pos-systems' element={<WebBasedPOSSystems />} />
+          <Route path='/services/it-support' element={<ITSupport />} />
+          <Route path='/services/web-hosting' element={<WebHosting />} />
+          <Route path='/services/website-maintenance' element={<WebsiteMaintenance />} /> */}
+
           <Route path='/contact' element={<ContactInformation />} />
         </Routes>
       </Router>

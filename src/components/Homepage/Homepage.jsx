@@ -2,16 +2,11 @@
 import { styled } from '@mui/material/styles';
 import { Typography, Container, Box, Button } from '@mui/material';
 import backgroundImage from "../../assets/images/Zeph.jpg";
-import aboutImage from "../../assets/images/c2.jpg";
-import servicesImage from "../../assets/images/c2.jpg";
-import portfolioImage from "../../assets/images/Zeph.jpg";
-import contactImage from "../../assets/images/c1.jpg";
 import Header from "../Header/Header.jsx";
 import About from "../About/About.jsx";
 import Services from "../Services/Services.jsx";
-import Portfolio from "../Portfolio/Portfolio.jsx";
 import ContactInformation from "../Contact/Contact.jsx";
-
+import CustomDivider from "../../Helpers/CustomDivider.jsx";
 // Hero Section Styles
 
 
@@ -95,177 +90,142 @@ function Homepage() {
   return (
     <>
       {/* Hero Section */}
-<HeroSectionWrapper
-  sx={(theme) => ({
-    background: theme.palette.gradients.primary,
-    color: theme.palette.common.white,
-    position: 'relative',
-    overflow: 'hidden',
-    minHeight: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  })}
->
-  <Header />
-
-  <HeroContainer>
-    <HeroContent
-      sx={{
-        opacity: 0,
-        animation: `fadeInHero 2s ease forwards`,
-        '@keyframes fadeInHero': {
-          '0%': { opacity: 0, transform: 'translateY(30px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
-        },
-      }}
-    >
-      {/* Company Name */}
-      <AnimatedTypography
-        variant="h3"
-        component="h1"
-        gutterBottom
-        delay={0.3}
+      <HeroSectionWrapper
         sx={(theme) => ({
-          fontWeight: 800,
-          letterSpacing: 1.5,
-          textTransform: 'uppercase',
+          background: theme.palette.gradients.primary,
           color: theme.palette.common.white,
-          fontSize: { xs: '1.8rem', sm: '2.2rem', md: '3rem' }, // responsive font size
-          animation: `slideDown 1.2s ease forwards`,
-          '@keyframes slideDown': {
-            '0%': { opacity: 0, transform: 'translateY(-30px)' },
-            '100%': { opacity: 1, transform: 'translateY(0)' },
-          },
+          position: 'relative',
+          overflow: 'hidden',
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
         })}
       >
-        Zephrika Technologies
-      </AnimatedTypography>
+        <Header />
 
-      {/* Catchphrase */}
-      <AnimatedTypography
-        variant="h4"
-        component="h2"
-        gutterBottom
-        delay={0.6}
-        sx={{
-          fontWeight: 600,
-          color: 'rgba(255,255,255,0.95)',
-          fontSize: { xs: '1.2rem', sm: '1.6rem', md: '2rem' },
-          animation: `fadeInUp 1.5s ease forwards`,
-          animationDelay: '0.3s',
-          opacity: 0,
-          '@keyframes fadeInUp': {
-            '0%': { opacity: 0, transform: 'translateY(30px)' },
-            '100%': { opacity: 1, transform: 'translateY(0)' },
-          },
-        }}
-      >
-        Empowering Businesses Through Digital Intelligence
-      </AnimatedTypography>
+        <HeroContainer>
+          <HeroContent
+            sx={{
+              opacity: 0,
+              animation: `fadeInHero 2s ease forwards`,
+              '@keyframes fadeInHero': {
+                '0%': { opacity: 0, transform: 'translateY(30px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+            }}
+          >
+            {/* Company Name */}
+            <AnimatedTypography
+              variant="h3"
+              component="h1"
+              gutterBottom
+              delay={0.3}
+              sx={(theme) => ({
+                fontWeight: 800,
+                letterSpacing: 1.5,
+                textTransform: 'uppercase',
+                color: theme.palette.common.white,
+                fontSize: { xs: '1.8rem', sm: '2.2rem', md: '3rem' }, // responsive font size
+                animation: `slideDown 1.2s ease forwards`,
+                '@keyframes slideDown': {
+                  '0%': { opacity: 0, transform: 'translateY(-30px)' },
+                  '100%': { opacity: 1, transform: 'translateY(0)' },
+                },
+              })}
+            >
+              Zephrika Technologies
+            </AnimatedTypography>
 
-      {/* Support Line */}
-      <AnimatedTypography
-        variant="h6"
-        component="p"
-        delay={0.9}
-        sx={{
-          color: 'rgba(255,255,255,0.85)',
-          maxWidth: 700,
-          mx: 'auto',
-          mb: 4,
-          fontSize: { xs: '0.95rem', sm: '1rem', md: '1.2rem' },
-          lineHeight: 1.6,
-          animation: `fadeInUp 1.8s ease forwards`,
-          animationDelay: '0.6s',
-          opacity: 0,
-        }}
-      >
-        We design, build, and scale digital solutions that help your business grow — 
-        faster, smarter, and stronger.
-      </AnimatedTypography>
+            {/* Catchphrase */}
+            <AnimatedTypography
+              variant="h4"
+              component="h2"
+              gutterBottom
+              delay={0.6}
+              sx={{
+                fontWeight: 600,
+                color: 'rgba(255,255,255,0.95)',
+                fontSize: { xs: '1.2rem', sm: '1.6rem', md: '2rem' },
+                animation: `fadeInUp 1.5s ease forwards`,
+                animationDelay: '0.3s',
+                opacity: 0,
+                '@keyframes fadeInUp': {
+                  '0%': { opacity: 0, transform: 'translateY(30px)' },
+                  '100%': { opacity: 1, transform: 'translateY(0)' },
+                },
+              }}
+            >
+              Empowering Businesses Through Digital Intelligence
+            </AnimatedTypography>
 
-      {/* CTA Button */}
-      <Box
-        sx={{
-          opacity: 0,
-          transform: 'translateY(20px)',
-          animation: `fadeInUp 2s ease forwards`,
-          animationDelay: `1s`,
-          '@keyframes fadeInUp': {
-            '0%': { opacity: 0, transform: 'translateY(20px)' },
-            '100%': { opacity: 1, transform: 'translateY(0)' },
-          },
-        }}
-      >
-        <Button
-          variant="contained"
-          size="large"
-          sx={(theme) => ({
-            fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
-            px: { xs: 3, md: 4 },
-            py: { xs: 1, md: 1.5 },
-            borderRadius: '50px',
-            background: theme.palette.gradients.secondary,
-            color: '#fff',
-            fontWeight: 600,
-            boxShadow: theme.shadows[2],
-            transition: 'all 0.3s ease',
-            '&:hover': {
-              background: theme.palette.gradients.accent,
-              boxShadow: theme.shadows[4],
-              transform: 'scale(1.05)',
-            },
-          })}
-        >
-          Get Started
-        </Button>
-      </Box>
-    </HeroContent>
-  </HeroContainer>
-</HeroSectionWrapper>
+            {/* Support Line */}
+            <AnimatedTypography
+              variant="h6"
+              component="p"
+              delay={0.9}
+              sx={{
+                color: 'rgba(255,255,255,0.85)',
+                maxWidth: 700,
+                mx: 'auto',
+                mb: 4,
+                fontSize: { xs: '0.95rem', sm: '1rem', md: '1.2rem' },
+                lineHeight: 1.6,
+                animation: `fadeInUp 1.8s ease forwards`,
+                animationDelay: '0.6s',
+                opacity: 0,
+              }}
+            >
+              We design, build, and scale digital solutions that help your business grow —
+              faster, smarter, and stronger.
+            </AnimatedTypography>
+
+            {/* CTA Button */}
+            <Box
+              sx={{
+                opacity: 0,
+                transform: 'translateY(20px)',
+                animation: `fadeInUp 2s ease forwards`,
+                animationDelay: `1s`,
+                '@keyframes fadeInUp': {
+                  '0%': { opacity: 0, transform: 'translateY(20px)' },
+                  '100%': { opacity: 1, transform: 'translateY(0)' },
+                },
+              }}
+            >
+              <Button
+                variant="contained"
+                size="large"
+                sx={(theme) => ({
+                  fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
+                  px: { xs: 3, md: 4 },
+                  py: { xs: 1, md: 1.5 },
+                  borderRadius: '50px',
+                  background: theme.palette.gradients.secondary,
+                  color: '#fff',
+                  fontWeight: 600,
+                  boxShadow: theme.shadows[2],
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    background: theme.palette.gradients.accent,
+                    boxShadow: theme.shadows[4],
+                    transform: 'scale(1.05)',
+                  },
+                })}
+              >
+                Get Started
+              </Button>
+            </Box>
+          </HeroContent>
+        </HeroContainer>
+      </HeroSectionWrapper>
 
 
 
-      {/* Section Divider */}
-      <SectionDivider
-        sx={(theme) => ({
-          position: "relative",
-          color: theme.palette.customDividers.brand, 
-          background: `linear-gradient(
-      to right,
-      ${theme.palette.primary.main},
-      ${theme.palette.secondary.main}
-    )`,
-          maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-        })}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          {/* Front wave - strong and vibrant */}
-          <path
-            fill="currentColor"
-            fillOpacity="0.9"
-            d="M0,160 C200,200 400,100 720,150 C1040,200 1240,120 1440,160 L1440,320 L0,320 Z"
-          ></path>
+      {/*SECTION DIVIDER*/}
 
-          {/* Back wave - subtle gradient shadow */}
-          <path
-            fill="url(#waveGradient)"
-            fillOpacity="0.6"
-            d="M0,200 C300,280 700,240 1100,180 C1300,150 1440,160 1440,160 L1440,320 L0,320 Z"
-          ></path>
-
-          {/* Gradient definition */}
-          <defs>
-            <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="rgba(255,255,255,0.3)" />
-              <stop offset="100%" stopColor="currentColor" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </SectionDivider>
+      <SectionDivider direction="down" />
 
 
       {/* About Section */}
@@ -278,43 +238,9 @@ function Homepage() {
         <About />
       </Box>
 
-      <SectionDivider
-        sx={(theme) => ({
-          position: "relative",
-          color: theme.palette.customDividers.brand, // base color
-          background: `linear-gradient(
-      to right,
-      ${theme.palette.primary.main},
-      ${theme.palette.secondary.main}
-    )`,
-          maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-        })}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          {/* Front wave - strong and vibrant */}
-          <path
-            fill="currentColor"
-            fillOpacity="0.9"
-            d="M0,160 C200,200 400,100 720,150 C1040,200 1240,120 1440,160 L1440,320 L0,320 Z"
-          ></path>
+      {/*SECTION DIVIDER*/}
 
-          {/* Back wave - subtle gradient shadow */}
-          <path
-            fill="url(#waveGradient)"
-            fillOpacity="0.6"
-            d="M0,200 C300,280 700,240 1100,180 C1300,150 1440,160 1440,160 L1440,320 L0,320 Z"
-          ></path>
-
-          {/* Gradient definition */}
-          <defs>
-            <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="rgba(255,255,255,0.3)" />
-              <stop offset="100%" stopColor="currentColor" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </SectionDivider>
+      <SectionDivider direction="down" />
 
 
       {/* Services Section */}
@@ -324,44 +250,9 @@ function Homepage() {
         <Services />
       </Box>
 
-      {/* Section Divider with theme colors */}
-      <SectionDivider
-        sx={(theme) => ({
-          position: "relative",
-          color: theme.palette.customDividers.brand, // base color
-          background: `linear-gradient(
-      to right,
-      ${theme.palette.primary.main},
-      ${theme.palette.secondary.main}
-    )`,
-          maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
-        })}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          {/* Front wave - strong and vibrant */}
-          <path
-            fill="currentColor"
-            fillOpacity="0.9"
-            d="M0,160 C200,200 400,100 720,150 C1040,200 1240,120 1440,160 L1440,320 L0,320 Z"
-          ></path>
+      {/*SECTION DIVIDER*/}
 
-          {/* Back wave - subtle gradient shadow */}
-          <path
-            fill="url(#waveGradient)"
-            fillOpacity="0.6"
-            d="M0,200 C300,280 700,240 1100,180 C1300,150 1440,160 1440,160 L1440,320 L0,320 Z"
-          ></path>
-
-          {/* Gradient definition */}
-          <defs>
-            <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="rgba(255,255,255,0.3)" />
-              <stop offset="100%" stopColor="currentColor" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </SectionDivider>
+      <SectionDivider direction="down" />
 
 
 

@@ -71,15 +71,15 @@ function Header() {
 
  
   const services = [
-    { label: "Web Design", icon: <WebIcon /> },
-    { label: "Graphic Design", icon: <DesignIcon /> },
-    { label: "Digital Marketing", icon: <MarketingIcon /> },
-    { label: "Social Media Management", icon: <SocialIcon /> },
-    { label: "AI Assistants Development", icon: <AiIcon /> },
-    { label: "Web-based POS Systems", icon: <PosIcon /> },
-    { label: "IT Support", icon: <SupportIcon /> },
-    { label: "Web Hosting", icon: <HostingIcon /> },
-    { label: "Website Maintenance", icon: <MaintenanceIcon /> },
+    { label: "Web Design", icon: <WebIcon />, to: "/services/web-design", type: "route" },
+    { label: "Graphic Design", icon: <DesignIcon />, to: "/services/graphic-design", type: "route" },
+    { label: "Digital Marketing", icon: <MarketingIcon />, to: "/services/digital-marketing", type: "route" },
+    { label: "Social Media Management", icon: <SocialIcon />, to:"/services/social-media-management", type: "route"  },
+    { label: "AI Assistants Development", icon: <AiIcon />, to: "/services/ai-assistants", type: "route" },
+    { label: "Web-based POS Systems", icon: <PosIcon />, to: "/services/pos-systems", type: "route" },
+    { label: "IT Support", icon: <SupportIcon />, to: "/services/it-support", type: "route" },
+    { label: "Web Hosting", icon: <HostingIcon />, to: "/services/web-hosting", type: "route" },
+    { label: "Website Maintenance", icon: <MaintenanceIcon />, to: "/services/website-maintenance", type: "route" },
   ];
 
   const navLinks = [
@@ -154,12 +154,16 @@ function Header() {
                           {services.map((srv, i) => (
                             <Box
                               key={i}
+                              component={srv.to ? RouterLink : "div"}
+                              to={srv.to}
+                              onClick={() => setServicesOpen(false)}
                               sx={{
                                 display: "flex",
                                 alignItems: "center",
                                 color: "black",
                                 p: 1,
                                 borderRadius: "8px",
+                                textDecoration: "none",
                                 cursor: "pointer",
                                 transition: "0.3s ease",
                                 "&:hover": {
@@ -227,6 +231,7 @@ function Header() {
             </Button>
           </Box>
         )}
+
 
         {/* Mobile Menu */}
         {isMobile && (
@@ -326,16 +331,22 @@ function Header() {
                   )}
                 </ListItemButton>
 
+                {/*DRAWER SERVICES ROUTING*/}
+
                 <Collapse in={servicesOpen} timeout="auto" unmountOnExit>
                   <List component="div" disablePadding>
                     {services.map((srv, i) => (
                       <ListItemButton
                         key={i}
+                        component={srv.to ? RouterLink : "div"}
+                        to={srv.to}
+                        onClick={toggleDrawer(false)}
                         sx={{
                           pl: 6,
                           "&:hover": {
                             backgroundColor: theme.palette.secondary.main,
                             color: "#fff",
+                            textDecoration: "none",
                           },
                         }}
                       >

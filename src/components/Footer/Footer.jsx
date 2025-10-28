@@ -191,7 +191,7 @@ function Footer() {
               <IconButton aria-label="facebook" size="small"
                 sx={{
                   transition: "color 0.3 ease",
-                  "&:hover": { color: "#0A66C2" }
+                  "&:hover": { color: theme.palette.primary.main }
                 }}>
                 <FacebookIcon />
               </IconButton>
@@ -199,7 +199,7 @@ function Footer() {
               <IconButton aria-label="linkedin" size="small"
                 sx={{
                   transition: "color 0.3 ease",
-                  "&:hover": { color: "#0A66C2" }
+                  "&:hover": { color: theme.palette.primary.main }
                 }}>
                 <LinkedInIcon />
               </IconButton>
@@ -207,7 +207,7 @@ function Footer() {
               <IconButton aria-label="x" size="small"
                 sx={{
                   transition: "color 0.3 ease",
-                  "&:hover": { color: "#0A66C2" }
+                  "&:hover": { color: theme.palette.primary.main }
                 }}>
                 <TwitterIcon />
               </IconButton>
@@ -215,7 +215,7 @@ function Footer() {
               <IconButton aria-label="instagram" size="small"
                 sx={{
                   transition: "color 0.3 ease",
-                  "&:hover": { color: "#2b4f74ff" }
+                  "&:hover": { color: theme.palette.primary.main }
                 }}>
                 <InstagramIcon />
               </IconButton>
@@ -223,7 +223,7 @@ function Footer() {
               <IconButton aria-label="whatsapp" size="small"
                 sx={{
                   transition: "color 0.3 ease",
-                  "&:hover": { color: "#0A66C2" }
+                  "&:hover": { color: theme.palette.primary.main }
                 }}>
                 <WhatsAppIcon />
               </IconButton>
