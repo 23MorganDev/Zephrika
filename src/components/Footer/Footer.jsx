@@ -20,14 +20,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import companyLogo from "../../assets/images/zephrika-logo.png";
 
 const sections = {
-  "Add ons": [
-    "Time and Attendance",
-    "Perks & Benefits",
-    "Payouts",
-    "Performance Management",
-    "Leaves and Time off",
-    "Expense Management",
-  ],
+
   "Built for you": [
     "MSMEs",
     "Startups",
@@ -39,7 +32,6 @@ const sections = {
   Company: [
     "About us",
     "Careers",
-    "Press & Media",
     "Customer Testimonials",
     "Community",
     "Contact us",

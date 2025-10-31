@@ -157,7 +157,7 @@ function Homepage() {
                 },
               }}
             >
-              Empowering Businesses Through Digital Intelligence
+              Empowering Small Businesses Through Smart Digital Solutions.
             </AnimatedTypography>
 
             {/* Support Line */}
@@ -177,8 +177,7 @@ function Homepage() {
                 opacity: 0,
               }}
             >
-              We design, build, and scale digital solutions that help your business grow —
-              faster, smarter, and stronger.
+              We design, build, and scale digital solutions that help your business grow — faster, smarter, and stronger in the digital economy.
             </AnimatedTypography>
 
             {/* CTA Button */}
