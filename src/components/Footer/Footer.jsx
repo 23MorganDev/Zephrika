@@ -153,7 +153,7 @@ function Footer() {
                     mb: 0.3,
                   }}
                 >
-                  marketing@zephrikatechnologies.com
+                  zephrikatechnologies@gmail.com
                 </Typography>
                 <Typography
                   variant="body2"
@@ -161,7 +161,7 @@ function Footer() {
                     color: theme.palette.text.secondary,
                   }}
                 >
-                  hello@zephrikatechnologies.com
+                  morganmuthee1@gmail.com
                 </Typography>
               </Box>
             </Box>

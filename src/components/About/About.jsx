@@ -1,19 +1,10 @@
+// Updated AboutPage component focused on company identity instead of individuals.
 import React from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
 import backgroundImage from "../../assets/images/Zeph.jpg";
 
 function AboutPage() {
   const theme = useTheme();
-
-  const teamMembers = [
-    { name: 'Morgan Muthee', role: 'Founder and Chief Maverick' },
-    { name: 'Stanley Maina', role: 'Chief Operating Officer (COO)' },
-    { name: 'Lucky Kathumo', role: 'Lead Designer and Head of Marketing and Customer Outreach' },
-    { name: 'Felister Wanza', role: 'Web Developer and Social Media Management ' },
-    { name: 'Joseph Gicharu', role: 'AI Agents Developer'}
-
-
-  ];
 
   return (
     <Box display="flex" flexDirection="column">
@@ -97,10 +88,10 @@ function AboutPage() {
             color: theme.palette.text.secondary,
           }}
         >
-          Zephrika Technologies is a forward-thinking technology company dedicated
-          to helping businesses establish powerful digital footprints. We craft
-          modern websites, scalable applications, and digital solutions that blend
-          innovation with reliability.
+          Zephrika Technologies is a disruptive African born tech consultancy
+          empowering SMEs and mid-sized businesses with modern, affordable, and
+          scalable digital solutions. We merge innovation, speed, and deep client
+          understanding to deliver solutions tailored to each business’s unique needs.
         </Typography>
       </Box>
 
@@ -124,11 +115,11 @@ function AboutPage() {
           }}
         >
           {[
-            { title: "Our Vision", text: "To be a globally recognized leader in digital innovation, empowering businesses to thrive through cutting-edge technology and sustainable solutions." },
-            { title: "Our Mission", text: "To empower businesses by delivering tailored, innovative, and scalable digital solutions that drive growth, engagement, and long-term success." }
-          ].map((item, i) => (
+            { title: "Our Vision", text: "To become Kenya’s and East Africa’s leading IT consulting powerhouse driving SME digital transformation and enabling businesses to compete globally while maintaining their uniqueness." },
+            { title: "Our Mission", text: "To empower SMEs with custom-built digital solutions that enhance customer acquisition, streamline operations, and unlock sustainable growth one innovative solution at a time." }
+          ].map((item, index) => (
             <Box
-              key={i}
+              key={index}
               sx={{
                 flex: 1,
                 p: 3,
@@ -152,24 +143,37 @@ function AboutPage() {
         </Box>
       </Box>
 
-      {/* Meet Our Team */}
+      {/* What Drives Us */}
       <Box
         sx={{
           background: theme.palette.gradients.surfaceAlt,
           py: { xs: 4, md: 6 },
+          px: { xs: 3, md: 6 },
           textAlign: 'center',
         }}
       >
         <Typography
           variant="h4"
           gutterBottom
+          sx={{ color: theme.palette.primary.main, fontWeight: 700 }}
+        >
+          What Drives Us
+        </Typography>
+        <Typography
           sx={{
-            color: theme.palette.primary.main,
-            fontWeight: 700,
+            maxWidth: 950,
+            mx: 'auto',
+            color: theme.palette.text.secondary,
+            fontSize: { xs: '1rem', md: '1.15rem' },
+            lineHeight: 1.8,
           }}
         >
-          Meet Our Team
+          At Zephrika, we believe technology should elevate businesses not complicate
+          them. That’s why we operate with a client first mindset, delivering
+          affordability, speed, and long-term partnership. We walk with you from
+          problem identification to solution development and post-launch growth.
         </Typography>
+
         <Box
           sx={{
             display: 'flex',
@@ -177,55 +181,48 @@ function AboutPage() {
             justifyContent: 'center',
             gap: 4,
             mt: 4,
+            maxWidth: 1200,
+            mx: 'auto',
           }}
         >
-          {teamMembers.map((member, index) => (
+          {[
+            {
+              title: 'Tailored Solutions',
+              text: 'Every solution is custom built never one-size-fits-all. Your business is unique, and your digital presence should be too.',
+            },
+            {
+              title: 'Affordable Innovation',
+              text: 'We deliver premium-grade solutions at MSME-friendly pricing without compromising quality or speed.',
+            },
+            {
+              title: 'End-to-End Support',
+              text: 'From ideation to deployment and beyond we stay with you to ensure your digital tools keep delivering value.',
+            },
+            {
+              title: 'Agile Execution',
+              text: 'Speed is in our DNA. We build, refine, and deliver fast so your business can move faster.',
+            },
+          ].map((feature, index) => (
             <Box
               key={index}
               sx={{
-                width: { xs: '100%', sm: '45%', md: '285px' },
-                textAlign: 'center',
+                flex: { xs: '100%', sm: '45%', md: '22%' },
+                p: 3,
+                borderRadius: 3,
+                backgroundColor: theme.palette.background.paper,
+                boxShadow: theme.shadows[3],
+                transition: '0.3s',
+                '&:hover': {
+                  transform: 'translateY(-6px)',
+                  boxShadow: theme.shadows[6],
+                },
               }}
             >
-              <Box
-                sx={{
-                  height: 350,
-                  borderRadius: 3,
-                  overflow: 'hidden',
-                  boxShadow: theme.shadows[4],
-                  transition: theme.transitions.create('transform', {
-                    duration: 400,
-                  }),
-                  '&:hover': { transform: 'scale(1.03)' },
-                }}
-              >
-                <img
-                  src={backgroundImage}
-                  alt={member.name}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </Box>
-              <Typography
-                variant="h6"
-                sx={{
-                  color: theme.palette.primary.main,
-                  fontWeight: 'bold',
-                  mt: 2,
-                }}
-              >
-                {member.name}
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+                {feature.title}
               </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: theme.palette.text.secondary,
-                }}
-              >
-                {member.role}
+              <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                {feature.text}
               </Typography>
             </Box>
           ))}

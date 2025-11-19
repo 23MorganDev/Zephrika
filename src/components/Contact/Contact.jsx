@@ -25,17 +25,17 @@ function ContactPage() {
     },
     {
       title: "24/7 Support",
-      details: "+254 700 000 000\n+254 700 000 001",
+      details: "+254 703680907\n+254 113427928",
       icon: "fas fa-phone-alt",
     },
     {
       title: "Drop Us a Line",
-      details: "inquiries@zephrikatechnologies.com",
+      details: "zephrikatechnologies.gmail.com",
       icon: "fas fa-envelope",
     },
     {
-      title: "Office Hours",
-      details: "Mon–Fri: 9 AM - 5 PM\nSat: 10 AM - 2 PM\nSunday: Closed",
+      title: "Service Hours",
+      details: "Mon–Fri: 8 AM - 5 PM\nSat: 8 AM - 12 PM\nSunday: Closed",
       icon: "fas fa-clock",
     },
   ];
