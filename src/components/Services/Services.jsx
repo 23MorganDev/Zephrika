@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { Box, Typography, Grid, Container } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-// Service Icons
+// Icons
 import LanguageIcon from '@mui/icons-material/Language';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import BrushIcon from '@mui/icons-material/Brush';
@@ -18,87 +19,65 @@ import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import BuildIcon from '@mui/icons-material/Build';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 
-import backgroundImage from "../../assets/images/Zeph.jpg";
+import backgroundImage from "../../assets/images/SEO2.jpg";
 
 function ServicesPage() {
   const theme = useTheme();
 
-  const services = [
-    { title: "Web Development", icon: <LanguageIcon sx={{ fontSize: 48 }} /> },
-    { title: "Mobile App Development", icon: <PhoneIphoneIcon sx={{ fontSize: 48 }} /> },
-    { title: "UI/UX Design", icon: <BrushIcon sx={{ fontSize: 48 }} /> },
-    { title: "Web Based PoS Systems", icon: <SecurityIcon sx={{ fontSize: 48 }} /> },
-    { title: "Cloud Solutions", icon: <CloudIcon sx={{ fontSize: 48 }} /> },
-    { title: "Data & AI Solutions", icon: <StorageIcon sx={{ fontSize: 48 }} /> },
-    { title: "IT Support", icon: <SupportAgentIcon sx={{ fontSize: 48 }} /> },
-    { title: "Custom Software", icon: <CodeIcon sx={{ fontSize: 48 }} /> },
-  ];
+const services = [
+{ title: "Website Development", description: "Modern, responsive and fast-loading sites tailored for your business.", icon: <LanguageIcon sx={{ fontSize: 48 }} /> },
+{ title: "Mobile App Development", description: "Custom Android & iOS apps crafted to elevate customer experience.", icon: <PhoneIphoneIcon sx={{ fontSize: 48 }} /> },
+{ title: "UI/UX & Branding", description: "Beautiful interfaces and brand identities that stand out.", icon: <BrushIcon sx={{ fontSize: 48 }} /> },
+{ title: "Web-Based PoS Systems", description: "Secure, cloud-ready point-of-sale systems for growing businesses.", icon: <SecurityIcon sx={{ fontSize: 48 }} /> },
+{ title: "Cloud Integration & Management", description: "We serve as your intermediary—helping you choose, set up, and manage the best cloud or hosting provider for your needs. We do not host infrastructure ourselves; instead, we ensure you get reliable, scalable, and cost‑effective solutions from trusted providers.", icon: <CloudIcon sx={{ fontSize: 48 }} /> },
+{ title: "Data & AI Solutions", description: "AI automation, data processing, and custom AI agents for efficiency.", icon: <StorageIcon sx={{ fontSize: 48 }} /> },
+{ title: "IT Support & Maintenance", description: "Reliable on-demand tech support for SMEs.", icon: <SupportAgentIcon sx={{ fontSize: 48 }} /> },
+{ title: "Custom Software Development", description: "Fully custom applications built around your unique needs.", icon: <CodeIcon sx={{ fontSize: 48 }} /> },
+];
 
-  const processSteps = [
-    {
-      title: "Understand Needs",
-      description: "We start by understanding your unique needs and challenges.",
-      icon: <SearchIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />
-    },
-    {
-      title: "Design Strategy",
-      description: "We design a customized strategy that aligns with your goals.",
-      icon: <DesignServicesIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />
-    },
-    {
-      title: "Implement",
-      description: "Our team implements the plan with precision and expertise.",
-      icon: <BuildIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />
-    },
-    {
-      title: "Support",
-      description: "We offer continuous support to ensure sustainable success.",
-      icon: <HeadsetMicIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />
-    }
-  ];
+
+const processSteps = [
+{ title: "Understand Needs", description: "We learn your business goals, challenges, and vision.", icon: <SearchIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
+{ title: "Design The Strategy", description: "We craft a digital solution that aligns with your goals.", icon: <DesignServicesIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
+{ title: "Build & Deliver", description: "Agile development—fast, precise, reliable.", icon: <BuildIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
+{ title: "Support & Scale", description: "We stay with you to ensure continuous growth and improvement.", icon: <HeadsetMicIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
+];
 
   return (
-    <Box display="flex" flexDirection="column" sx={{ mt: 0 }}>
-      {/* Hero Section */}
+    <Box display="flex" flexDirection="column">
+
+      {/* HERO */}
       <Box
         sx={{
           position: 'relative',
-          height: '500px',
-          width: '100%',
+          height: { xs: '350px', md: '500px' },
           overflow: 'hidden',
           mb: 4,
         }}
       >
         <Box
           sx={{
-            backgroundImage: `url(${backgroundImage})`,
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${backgroundImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
             position: 'absolute',
             inset: 0,
             zIndex: -1,
           }}
         />
+
         <Box
           sx={{
-            position: 'absolute',
-            inset: 0,
-            background: theme.palette.gradients.darkOverlay,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            position: 'absolute', inset: 0,
+            display: 'flex', justifyContent: 'center', alignItems: 'center',
           }}
         >
           <Typography
             variant="h2"
-            gutterBottom
             sx={{
-              color: theme.palette.common.white,
-              fontWeight: 800,
-              textAlign: 'center',
-              textShadow: "0 4px 12px rgba(0,0,0,0.4)",
-              fontSize: 'clamp(3rem, 8vw, 65px)',
+              color: theme.palette.primary.main, fontWeight: 800, textAlign: 'center',
+              fontSize: { xs: '2.5rem', md: 'clamp(2.5rem, 7vw, 68px)' },
+              textShadow: theme.shadows[6]
             }}
           >
             Our Services
@@ -106,147 +85,106 @@ function ServicesPage() {
         </Box>
       </Box>
 
-      {/* Services Section with background */}
-      <Box
-        sx={{
-          px: { xs: 2, md: 6 },
-          py: { xs: 6, md: 10 },
-          background: theme.palette.gradients.surface || theme.palette.gradients.surfaceAlt,
-          position: "relative",
-        }}
-      >
+
+      {/* SERVICES SECTION */}
+      <Box sx={{ px: { xs: 2, md: 6 }, py: { xs: 6, md: 10 }, background: theme.palette.gradients.surface }}>
+
         <Typography
-          variant="h5"
-          sx={{
-            maxWidth: "800px",
-            mx: "auto",
-            fontWeight: 600,
-            textAlign: "center",
-            fontFamily: "Georgia, serif",
-            fontStyle: "italic",
-            color: theme.palette.primary.main,
-            mb: 6,
-          }}
+          variant="h4"
+          sx={{ textAlign: 'center', fontWeight: 700, mb: 1, color: theme.palette.primary.main }}
         >
-          Our Company Provides the Below<br />Services with Exceptional Quality
+          Tailored Digital Solutions
         </Typography>
 
+        <Typography
+          sx={{
+            textAlign: 'center', maxWidth: 900, mx: 'auto',
+            mb: 6, color: theme.palette.text.secondary,
+            fontSize: { xs: '1rem', md: '1.15rem' }, lineHeight: 1.8
+          }}
+        >
+          We don’t offer one-size-fits-all services. Every solution we create is designed to meet
+          the unique needs of SMEs and mid-level businesses across Kenya and East Africa.
+        </Typography>
+
+
         {/* Services Grid */}
-        <Grid container spacing={4} justifyContent="center" alignItems="stretch">
+        <Grid container spacing={4} justifyContent="center">
           {services.map((service, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
               <Box
                 sx={{
                   background: theme.palette.background.paper,
                   borderRadius: 4,
-                  border: `1px solid ${theme.palette.divider}`,
-                  height: "100%",
-                  minHeight: 220,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  textAlign: "center",
                   p: 4,
-                  boxShadow: "0px 2px 6px rgba(0,0,0,0.05)",
-                  transition: "all 0.3s ease",
-                  "&:hover": {
-                    background: theme.palette.action.hover,
-                    transform: "translateY(-6px)",
-                    boxShadow: "0px 6px 18px rgba(0,0,0,0.15)",
-                  },
+                  minHeight: 260,
+                  textAlign: 'center',
+                  boxShadow: theme.shadows[3],
+                  transition: '0.3s',
+                  '&:hover': { transform: 'translateY(-6px)', boxShadow: theme.shadows[6] }
                 }}
               >
-                <Box sx={{ fontSize: 48, color: theme.palette.primary.main }}>
+                <Box sx={{ color: theme.palette.primary.main, mb: 2 }}>
                   {service.icon}
                 </Box>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontWeight: 600,
-                    mt: 2,
-                    color: theme.palette.text.primary,
-                  }}
-                >
+                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
                   {service.title}
+                </Typography>
+                <Typography sx={{ color: theme.palette.text.secondary }}>
+                  {service.description}
                 </Typography>
               </Box>
             </Grid>
           ))}
         </Grid>
-
-        {/* Process Section */}
-        <Box sx={{ background: theme.palette.gradients.surfaceAlt, py: 6, mt: 6 }}>
-          <Container maxWidth="lg">
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: 800,
-                textAlign: 'center',
-                fontFamily: "Georgia, serif",
-                fontStyle: "italic",
-                color: theme.palette.primary.main,
-                mb: 3,
-              }}
-            >
-              The Process We Follow
-            </Typography>
-
-            <Typography
-              sx={{
-                fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
-                textAlign: 'center',
-                maxWidth: 800,
-                mx: 'auto',
-                fontFamily: "Georgia, serif",
-                fontStyle: "italic",
-                color: theme.palette.text.secondary,
-                mb: 5,
-              }}
-            >
-              At Zephrika we follow a structured process to ensure the best results for our clients.
-              Our approach includes understanding client needs, designing tailored solutions, implementing
-              strategies, and providing ongoing support.
-            </Typography>
-
-            <Grid container spacing={4} justifyContent="center">
-              {processSteps.map((step, index) => (
-                <Grid item xs={12} sm={6} md={3} key={index}>
-                  <Box
-                    sx={{
-                      background: theme.palette.background.paper,
-                      borderRadius: 3,
-                      p: 4,
-                      height: '100%',
-                      boxShadow: 3,
-                      textAlign: 'center',
-                      transition: "all 0.3s ease",
-                      "&:hover": { transform: "translateY(-6px)", boxShadow: 6 }
-                    }}
-                  >
-                    <Box mb={2}>{step.icon}</Box>
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontWeight: 700,
-                        fontFamily: "Georgia, serif",
-                        fontStyle: "italic",
-                        color: theme.palette.primary.main,
-                        mb: 1,
-                      }}
-                    >
-                      {step.title}
-                    </Typography>
-                    <Typography sx={{ color: theme.palette.text.secondary }}>
-                      {step.description}
-                    </Typography>
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-          </Container>
-        </Box>
       </Box>
+
+
+      {/* PROCESS SECTION */}
+      <Box sx={{ background: theme.palette.gradients.surfaceAlt, py: 10, px: 3 }}>
+        <Container maxWidth="lg">
+
+          <Typography
+            variant="h4"
+            sx={{ textAlign: 'center', mb: 3, fontWeight: 800, color: theme.palette.primary.main }}
+          >
+            Our Process
+          </Typography>
+
+          <Typography
+            sx={{ maxWidth: 850, mx: 'auto', textAlign: 'center', color: theme.palette.text.secondary, mb: 6 }}
+          >
+            We follow a transparent, structured and client-focused process to ensure your project is delivered with excellence.
+          </Typography>
+
+          <Grid container spacing={4} justifyContent="center">
+            {processSteps.map((step, index) => (
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <Box
+                  sx={{
+                    background: theme.palette.background.paper,
+                    borderRadius: 3,
+                    p: 4,
+                    textAlign: 'center',
+                    boxShadow: theme.shadows[3],
+                    transition: '0.3s',
+                    '&:hover': { transform: 'translateY(-6px)', boxShadow: theme.shadows[6] },
+                  }}
+                >
+                  <Box mb={2}>{step.icon}</Box>
+                  <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+                    {step.title}
+                  </Typography>
+                  <Typography sx={{ color: theme.palette.text.secondary }}>
+                    {step.description}
+                  </Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
     </Box>
   );
 }
