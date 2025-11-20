@@ -25,9 +25,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 // Service Icons
 import WebIcon from "@mui/icons-material/Language";
-import DesignIcon from "@mui/icons-material/Brush";
 import MarketingIcon from "@mui/icons-material/Campaign";
-import SocialIcon from "@mui/icons-material/PeopleAlt";
 import AiIcon from "@mui/icons-material/SmartToy";
 import PosIcon from "@mui/icons-material/PointOfSale";
 import SupportIcon from "@mui/icons-material/SupportAgent";
@@ -37,12 +35,15 @@ import MaintenanceIcon from "@mui/icons-material/BuildCircle";
 import logo from "../../assets/images/zephrika-logo.png";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: "rgba(255, 255, 255, 0.9)",
-  backdropFilter: "blur(10px)",
-  WebkitBackdropFilter: "blur(10px)",
-  boxShadow: "none",
+  backgroundColor: "transparent",// more transparent
+  backdropFilter: "blur(16px) saturate(180%)",
+  WebkitBackdropFilter: "blur(16px) saturate(180%)",
+  borderBottom: "1px solid rgba(255, 255, 255, 0.25)", // frosted border
+  boxShadow: "0 6px 20px rgba(0, 0, 0, 0.12)", // soft glass shadow
   transition: "all 0.3s ease",
 }));
+
+
 
 const StyledToolbar = styled(Toolbar)(() => ({
   display: "flex",
@@ -72,9 +73,7 @@ function Header() {
  
   const services = [
     { label: "Web Design", icon: <WebIcon />, to: "/services/web-design", type: "route" },
-    { label: "Graphic Design", icon: <DesignIcon />, to: "/services/graphic-design", type: "route" },
     { label: "Digital Marketing", icon: <MarketingIcon />, to: "/services/digital-marketing", type: "route" },
-    { label: "Social Media Management", icon: <SocialIcon />, to:"/services/social-media-management", type: "route"  },
     { label: "AI Assistants Development", icon: <AiIcon />, to: "/services/ai-assistants", type: "route" },
     { label: "Web-based POS Systems", icon: <PosIcon />, to: "/services/pos-systems", type: "route" },
     { label: "IT Support", icon: <SupportIcon />, to: "/services/it-support", type: "route" },
@@ -436,7 +435,7 @@ function Header() {
               <Box sx={{ mt: "auto", pb: 4 }}>
                 <Button
                   variant="contained"
-                  href="mailto:morganmuthee1@gmail.com"
+                  href="mailto:zephrikatechnologies@gmail.com"
                   sx={{
                     backgroundColor: theme.palette.secondary.main,
                     color: "#fff",
