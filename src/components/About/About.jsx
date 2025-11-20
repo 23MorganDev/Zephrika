@@ -46,7 +46,7 @@ function AboutPage() {
             variant="h2"
             sx={{
               ...theme.typography.h2,
-              color: theme.palette.common.white,
+              color: theme.palette.primary.main ,
               fontWeight: 800,
               textAlign: 'center',
               textShadow: theme.shadows[6],
@@ -218,7 +218,7 @@ function AboutPage() {
                 },
               }}
             >
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: theme.palette.primary.main }}>
                 {feature.title}
               </Typography>
               <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
