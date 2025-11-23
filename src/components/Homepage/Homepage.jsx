@@ -1,11 +1,12 @@
 // src/components/Homepage/Homepage.jsx
 import { styled } from '@mui/material/styles';
 import { Typography, Container, Box, Button } from '@mui/material';
-import backgroundImage from "../../assets/images/Zeph.jpg";
+import backgroundImage from "../../assets/images/Home2.jpg";
 import Header from "../Header/Header.jsx";
 import About from "../About/About.jsx";
 import Services from "../Services/Services.jsx";
 import ContactInformation from "../Contact/Contact.jsx";
+import WhyChooseZephrika from "../Why_Zephrika/Why_Zephrika.jsx";
 
 // Hero Section Styles
 
@@ -60,8 +61,8 @@ const FadeUp = styled(Typography)(({ delay }) => ({
 }));
 
 const SectionDivider = styled(Box)(() => ({
-  lineHeight:0,
-  overflow: "hidden",
+    lineHeight: 0,
+    overflow: "hidden",
 }));
 
 
@@ -71,7 +72,7 @@ function Homepage() {
     return (
 
         <>
-        <Header />
+            <Header />
             <HeroWrapper>
 
                 <HeroContent maxWidth="lg">
@@ -154,50 +155,58 @@ function Homepage() {
                     </Box>
 
                 </HeroContent>
-            </HeroWrapper>  
+            </HeroWrapper>
 
 
-      {/*SECTION DIVIDER*/}
+            {/*SECTION DIVIDER*/}
 
-      <SectionDivider direction="down" />
-
-
-      {/* About Section */}
-      <Box
-        id="about"
-        sx={{
-          position: "relative",
-        }}
-      >
-        <About />
-      </Box>
-
-      {/*SECTION DIVIDER*/}
-
-      <SectionDivider direction="down" />
+            <SectionDivider direction="down" />
 
 
-      {/* Services Section */}
-      <Box
-        id="services"
-      >
-        <Services />
-      </Box>
+            {/* About Section */}
+            <Box
+                id="about"
+                sx={{
+                    position: "relative",
+                }}
+            >
+                <About />
+            </Box>
 
-      {/*SECTION DIVIDER*/}
+            {/*SECTION DIVIDER*/}
 
-      <SectionDivider direction="down" />
+            <SectionDivider direction="down" />
 
 
+            {/* Services Section */}
+            <Box
+                id="services"
+            >
+                <Services />
+            </Box>
 
-      {/* Contact Section */}
-      <Box
-        id="contact"
-      >
-        <ContactInformation />
-      </Box>
-    </>
-  );
+            {/*SECTION DIVIDER*/}
+
+            <SectionDivider direction="down" />
+
+            {/* Why Choose Us Section */}
+
+            <Box
+                id="why-choose-us">
+                <WhyChooseZephrika />
+            </Box>
+
+            {/*SECTION DIVIDER*/}
+            <SectionDivider direction="down" />
+
+            {/* Contact Section */}
+            <Box
+                id="contact"
+            >
+                <ContactInformation />
+            </Box>
+        </>
+    );
 }
 
 export default Homepage;
