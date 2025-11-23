@@ -5,6 +5,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { motion } from "framer-motion";
 import digitalMarketingIcon from "../../assets/images/SEO.jpg";
 import Header from "../Header/Header.jsx";
+import WhyChooseZephrika from "../Why_Zephrika/Why_Zephrika.jsx";
 import Footer from "../Footer/Footer.jsx";
 
 const services = [
@@ -79,7 +80,7 @@ function DigitalMarketing() {
                             mb: 2,
                             textTransform: "uppercase",
                             letterSpacing: "0.5px",
-                            color: theme.palette.primary.dark, 
+                            color: theme.palette.primary.dark,
                             textShadow: "0px 2px 8px rgba(0,0,0,0.4)",
                         }}
                     >
@@ -335,6 +336,13 @@ function DigitalMarketing() {
                     </Box>
                 </Box>
             </Box>
+
+            {/*WHY CHOOSE US COMPONENT*/}
+
+            <WhyChooseZephrika />
+
+
+            {/*FOOTER COMPONENT*/}
 
             <Footer />
         </>
