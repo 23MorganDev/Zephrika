@@ -1,7 +1,7 @@
 // Updated AboutPage component focused on company identity instead of individuals.
 import React from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
-import backgroundImage from "../../assets/images/Zeph.jpg";
+import backgroundImage from "../../assets/images/About3.jpg";
 
 function AboutPage() {
   const theme = useTheme();
@@ -46,7 +46,7 @@ function AboutPage() {
             variant="h2"
             sx={{
               ...theme.typography.h2,
-              color: theme.palette.primary.main ,
+              color: theme.palette.primary.light,
               fontWeight: 800,
               textAlign: 'center',
               textShadow: theme.shadows[6],
@@ -69,16 +69,40 @@ function AboutPage() {
         }}
       >
         <Typography
-          variant="h4"
-          gutterBottom
+          variant="h2"
           sx={{
-            ...theme.typography.h4,
-            color: theme.palette.primary.main,
-            fontWeight: 700,
+            ...theme.typography.h2,
+            display: "inline-block",
+            padding: {
+              xs: "6px 18px",
+              sm: "10px 26px",
+              md: "10px 28px",
+            },
+            borderRadius: "50px",
+            background: theme.palette.gradients.primary,
+            color: theme.palette.primary.contrastText,
+            fontWeight: 800,
+            textAlign: "center",
+            textShadow: theme.shadows[3],
+            fontSize: {
+              xs: "1.2rem",
+              sm: "1.6rem",
+              md: "clamp(1.8rem, 3.8vw, 2.4rem)",
+            },
+            boxShadow: theme.shadows[4],
+            transition: "0.3s ease",
+            margin: { xs: "16px 0", md: "24px 0" },
+            "&:hover": {
+              background: theme.palette.gradients.primaryHover,
+              boxShadow: theme.shadows[6],
+              transform: "translateY(-3px)",
+            },
           }}
         >
           Who We Are
         </Typography>
+
+
         <Typography
           sx={{
             maxWidth: 900,
@@ -153,9 +177,35 @@ function AboutPage() {
         }}
       >
         <Typography
-          variant="h4"
-          gutterBottom
-          sx={{ color: theme.palette.primary.main, fontWeight: 700 }}
+          variant="h2"
+          sx={{
+            ...theme.typography.h2,
+            display: "inline-block",
+            padding: {
+              xs: "6px 18px",
+              sm: "10px 26px",
+              md: "10px 28px",
+            },
+            borderRadius: "50px",
+            background: theme.palette.gradients.primary,
+            color: theme.palette.primary.contrastText,
+            fontWeight: 800,
+            textAlign: "center",
+            textShadow: theme.shadows[3],
+            fontSize: {
+              xs: "1.2rem",
+              sm: "1.6rem",
+              md: "clamp(1.8rem, 3.8vw, 2.4rem)",
+            },
+            boxShadow: theme.shadows[4],
+            transition: "0.3s ease",
+            margin: { xs: "16px 0", md: "24px 0" },
+            "&:hover": {
+              background: theme.palette.gradients.primaryHover,
+              boxShadow: theme.shadows[6],
+              transform: "translateY(-3px)",
+            },
+          }}
         >
           What Drives Us
         </Typography>
