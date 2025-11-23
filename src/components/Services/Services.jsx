@@ -19,29 +19,29 @@ import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import BuildIcon from '@mui/icons-material/Build';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 
-import backgroundImage from "../../assets/images/SEO2.jpg";
+import backgroundImage from "../../assets/images/Services.jpg";
 
 function ServicesPage() {
   const theme = useTheme();
 
-const services = [
-{ title: "Website Development", description: "Modern, responsive and fast-loading sites tailored for your business.", icon: <LanguageIcon sx={{ fontSize: 48 }} /> },
-{ title: "Mobile App Development", description: "Custom Android & iOS apps crafted to elevate customer experience.", icon: <PhoneIphoneIcon sx={{ fontSize: 48 }} /> },
-{ title: "UI/UX & Branding", description: "Beautiful interfaces and brand identities that stand out.", icon: <BrushIcon sx={{ fontSize: 48 }} /> },
-{ title: "Web-Based PoS Systems", description: "Secure, cloud-ready point-of-sale systems for growing businesses.", icon: <SecurityIcon sx={{ fontSize: 48 }} /> },
-{ title: "Cloud Integration & Management", description: "We serve as your intermediary—helping you choose, set up, and manage the best cloud or hosting provider for your needs. We do not host infrastructure ourselves; instead, we ensure you get reliable, scalable, and cost‑effective solutions from trusted providers.", icon: <CloudIcon sx={{ fontSize: 48 }} /> },
-{ title: "Data & AI Solutions", description: "AI automation, data processing, and custom AI agents for efficiency.", icon: <StorageIcon sx={{ fontSize: 48 }} /> },
-{ title: "IT Support & Maintenance", description: "Reliable on-demand tech support for SMEs.", icon: <SupportAgentIcon sx={{ fontSize: 48 }} /> },
-{ title: "Custom Software Development", description: "Fully custom applications built around your unique needs.", icon: <CodeIcon sx={{ fontSize: 48 }} /> },
-];
+  const services = [
+    { title: "Website Development", description: "Modern, responsive and fast-loading sites tailored for your business.", icon: <LanguageIcon sx={{ fontSize: 48 }} /> },
+    { title: "Mobile App Development", description: "Custom Android & iOS apps crafted to elevate customer experience.", icon: <PhoneIphoneIcon sx={{ fontSize: 48 }} /> },
+    { title: "UI/UX & Branding", description: "Beautiful interfaces and brand identities that stand out.", icon: <BrushIcon sx={{ fontSize: 48 }} /> },
+    { title: "Web-Based PoS Systems", description: "Secure, cloud-ready point-of-sale systems for growing businesses.", icon: <SecurityIcon sx={{ fontSize: 48 }} /> },
+    { title: "Cloud Integration & Management", description: "We serve as your intermediary—helping you choose, set up, and manage the best cloud or hosting provider for your needs. We do not host infrastructure ourselves; instead, we ensure you get reliable, scalable, and cost‑effective solutions from trusted providers.", icon: <CloudIcon sx={{ fontSize: 48 }} /> },
+    { title: "Data & AI Solutions", description: "AI automation, data processing, and custom AI agents for efficiency.", icon: <StorageIcon sx={{ fontSize: 48 }} /> },
+    { title: "IT Support & Maintenance", description: "Reliable on-demand tech support for SMEs.", icon: <SupportAgentIcon sx={{ fontSize: 48 }} /> },
+    { title: "Custom Software Development", description: "Fully custom applications built around your unique needs.", icon: <CodeIcon sx={{ fontSize: 48 }} /> },
+  ];
 
 
-const processSteps = [
-{ title: "Understand Needs", description: "We learn your business goals, challenges, and vision.", icon: <SearchIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
-{ title: "Design The Strategy", description: "We craft a digital solution that aligns with your goals.", icon: <DesignServicesIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
-{ title: "Build & Deliver", description: "Agile development—fast, precise, reliable.", icon: <BuildIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
-{ title: "Support & Scale", description: "We stay with you to ensure continuous growth and improvement.", icon: <HeadsetMicIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
-];
+  const processSteps = [
+    { title: "Understand Needs", description: "We learn your business goals, challenges, and vision.", icon: <SearchIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
+    { title: "Design The Strategy", description: "We craft a digital solution that aligns with your goals.", icon: <DesignServicesIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
+    { title: "Build & Deliver", description: "Agile development—fast, precise, reliable.", icon: <BuildIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
+    { title: "Support & Scale", description: "We stay with you to ensure continuous growth and improvement.", icon: <HeadsetMicIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} /> },
+  ];
 
   return (
     <Box display="flex" flexDirection="column">
@@ -75,7 +75,7 @@ const processSteps = [
           <Typography
             variant="h2"
             sx={{
-              color: theme.palette.primary.main, fontWeight: 800, textAlign: 'center',
+              color: theme.palette.primary.light, fontWeight: 800, textAlign: 'center',
               fontSize: { xs: '2.5rem', md: 'clamp(2.5rem, 7vw, 68px)' },
               textShadow: theme.shadows[6]
             }}
@@ -90,10 +90,37 @@ const processSteps = [
       <Box sx={{ px: { xs: 2, md: 6 }, py: { xs: 6, md: 10 }, background: theme.palette.gradients.surface }}>
 
         <Typography
-          variant="h4"
-          sx={{ textAlign: 'center', fontWeight: 700, mb: 1, color: theme.palette.primary.main }}
+          variant="h2"
+          sx={{
+            ...theme.typography.h2,
+            display: "inline-block",
+            padding: {
+              xs: "6px 18px",
+              sm: "10px 26px",
+              md: "12px 36px",
+            },
+            borderRadius: "50px",
+            background: theme.palette.gradients.primary,
+            color: theme.palette.primary.contrastText,
+            fontWeight: 800,
+            textAlign: "center",
+            textShadow: theme.shadows[3],
+            fontSize: {
+              xs: "1.2rem",
+              sm: "1.6rem",
+              md: "clamp(2rem, 5vw, 3rem)",
+            },
+            boxShadow: theme.shadows[4],
+            transition: "0.3s ease",
+            margin: { xs: "16px 0", md: "24px 0" },
+            "&:hover": {
+              background: theme.palette.gradients.primaryHover,
+              boxShadow: theme.shadows[6],
+              transform: "translateY(-3px)",
+            },
+          }}
         >
-          Tailored Digital Solutions
+          Tailored Digital Solutions for Your Business
         </Typography>
 
         <Typography
@@ -141,22 +168,61 @@ const processSteps = [
 
 
       {/* PROCESS SECTION */}
+      {/* PROCESS SECTION */}
       <Box sx={{ background: theme.palette.gradients.surfaceAlt, py: 10, px: 3 }}>
         <Container maxWidth="lg">
 
-          <Typography
-            variant="h4"
-            sx={{ textAlign: 'center', mb: 3, fontWeight: 800, color: theme.palette.primary.main }}
-          >
-            Our Process
-          </Typography>
+          {/* Title Wrapper */}
+          <Box sx={{ textAlign: "center" }}>
+            <Typography
+              variant="h2"
+              sx={{
+                ...theme.typography.h2,
+                display: "inline-block",
+                padding: {
+                  xs: "6px 18px",
+                  sm: "10px 26px",
+                  md: "10px 28px",
+                },
+                borderRadius: "50px",
+                background: theme.palette.gradients.primary,
+                color: theme.palette.primary.contrastText,
+                fontWeight: 800,
+                textAlign: "center",
+                textShadow: theme.shadows[3],
+                fontSize: {
+                  xs: "1.2rem",
+                  sm: "1.6rem",
+                  md: "clamp(1.8rem, 3.8vw, 2.4rem)",
+                },
+                boxShadow: theme.shadows[4],
+                transition: "0.3s ease",
+                margin: { xs: "16px 0", md: "24px 0" },
+                "&:hover": {
+                  background: theme.palette.gradients.primaryHover,
+                  boxShadow: theme.shadows[6],
+                  transform: "translateY(-3px)",
+                },
+              }}
+            >
+              Our Process
+            </Typography>
+          </Box>
 
+          {/* Subtitle */}
           <Typography
-            sx={{ maxWidth: 850, mx: 'auto', textAlign: 'center', color: theme.palette.text.secondary, mb: 6 }}
+            sx={{
+              maxWidth: 850,
+              mx: "auto",
+              textAlign: "center",
+              color: theme.palette.text.secondary,
+              mb: 6,
+            }}
           >
             We follow a transparent, structured and client-focused process to ensure your project is delivered with excellence.
           </Typography>
 
+          {/* Process Steps Grid */}
           <Grid container spacing={4} justifyContent="center">
             {processSteps.map((step, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
@@ -165,10 +231,10 @@ const processSteps = [
                     background: theme.palette.background.paper,
                     borderRadius: 3,
                     p: 4,
-                    textAlign: 'center',
+                    textAlign: "center",
                     boxShadow: theme.shadows[3],
-                    transition: '0.3s',
-                    '&:hover': { transform: 'translateY(-6px)', boxShadow: theme.shadows[6] },
+                    transition: "0.3s",
+                    "&:hover": { transform: "translateY(-6px)", boxShadow: theme.shadows[6] },
                   }}
                 >
                   <Box mb={2}>{step.icon}</Box>
@@ -182,8 +248,10 @@ const processSteps = [
               </Grid>
             ))}
           </Grid>
+
         </Container>
       </Box>
+
 
     </Box>
   );

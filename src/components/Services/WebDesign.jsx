@@ -13,6 +13,7 @@ import {
 
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
+import WhyChooseZephrika from '../Why_Zephrika/Why_Zephrika.jsx';
 
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -98,7 +99,7 @@ function WebDesign() {
               <Typography variant='h6' sx={{ color: theme.palette.secondary.light, mb: 1 }}>
                 Our process
               </Typography>
-              <Typography variant='body2' sx={{color: theme.palette.secondary.main, mb: 2 }}>
+              <Typography variant='body2' sx={{ color: theme.palette.secondary.main, mb: 2 }}>
                 Strategy → Design → Build → Launch → Maintain
               </Typography>
               <Button
@@ -180,7 +181,7 @@ function WebDesign() {
                       </Box>
 
                       <Box sx={{ flex: 1 }}>
-                        <Typography variant='h6' sx={{ fontWeight: 700,color: theme.palette.primary.dark }}>
+                        <Typography variant='h6' sx={{ fontWeight: 700, color: theme.palette.primary.dark }}>
                           {w.label}
                         </Typography>
                         <Typography variant='body2' sx={{ color: theme.palette.primary.dark }}>
@@ -229,6 +230,10 @@ function WebDesign() {
           </Box>
         </Container>
       </Box>
+
+      {/*WHY CHOOSE US COMPONENT */}
+
+      <WhyChooseZephrika />
 
       {/*FOOTER COMPONENT*/}
 
