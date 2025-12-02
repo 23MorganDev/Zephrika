@@ -12,8 +12,6 @@ import CloudIcon from '@mui/icons-material/Cloud';
 import StorageIcon from '@mui/icons-material/Storage';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import CodeIcon from '@mui/icons-material/Code';
-
-// Process Icons
 import SearchIcon from '@mui/icons-material/Search';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import BuildIcon from '@mui/icons-material/Build';
@@ -167,7 +165,6 @@ function ServicesPage() {
       </Box>
 
 
-      {/* PROCESS SECTION */}
       {/* PROCESS SECTION */}
       <Box sx={{ background: theme.palette.gradients.surfaceAlt, py: 10, px: 3 }}>
         <Container maxWidth="lg">

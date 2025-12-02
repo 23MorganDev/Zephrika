@@ -139,7 +139,7 @@ function Footer() {
                   sx={{
                     mb: 0.5,
                     fontWeight: 700,
-                    color: theme.palette.primary.main, 
+                    color: theme.palette.primary.main,
                     letterSpacing: 0.5,
                   }}
                 >
@@ -168,7 +168,7 @@ function Footer() {
           </Grid>
 
 
-          
+
           <Grid item xs={12} sm={6} md={2}>
             <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 1, color: theme.palette.primary.main }}>
               Socials
@@ -213,6 +213,8 @@ function Footer() {
               </IconButton>
 
               <IconButton aria-label="whatsapp" size="small"
+                href="https://wa.me/254113427928?text=Hello%20Zephrika%20Technologies%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.
+" target="_blank" rel="noopener noreferrer"
                 sx={{
                   transition: "color 0.3 ease",
                   "&:hover": { color: theme.palette.primary.main }

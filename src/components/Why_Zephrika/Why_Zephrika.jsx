@@ -42,7 +42,6 @@ const Hero = styled(Box)(({ theme }) => ({
 const HeroContent = styled(Container)(({ theme }) => ({
   position: "relative",
   zIndex: 1,
-  textAlign: "center",
   paddingBottom: theme.spacing(6),
 }));
 
@@ -64,7 +63,7 @@ const GlassCard = styled(Card)(({ theme }) => ({
   transition: "transform 0.28s ease, box-shadow 0.28s ease",
   "&:hover": {
     transform: "translateY(-8px)",
-    boxShadow: "0 18px 40px rgba(2,6,23,0.6)",
+    boxShadow: "0 18px 40px rgba(43, 22, 233, 0.67)",
   },
 }));
 
@@ -83,43 +82,44 @@ const IconSquare = styled(Avatar)(({ theme }) => ({
 
 const reasons = [
   {
-    title: "Instant Savings",
-    desc: "Get immediate savings on every purchase — we design affordable automation and cost-optimised workflows for small businesses.",
+    title: "Stop Overpaying",
+    desc: "Avoid costly corporate packages — get solutions built for your budget, not someone else’s.",
     Icon: SavingsIcon,
   },
   {
-    title: "Real-Time Insights",
-    desc: "Make smarter decisions with live data and actionable insights delivered in real-time to keep you ahead.",
+    title: "Avoid Blind Decisions",
+    desc: "Don’t rely on guesswork. Get clear insights so you always know what’s working and what isn't.",
     Icon: InsightsIcon,
   },
   {
-    title: "Flexible Plans",
-    desc: "Plans that adapt to your business: scalable, transparent and built for growth without heavy lock-ins.",
+    title: "Skip Rigid Packages",
+    desc: "No more one-size-fits-all plans. Your tools scale only when you do — nothing extra.",
     Icon: PlanIcon,
   },
   {
-    title: "Security & Trust",
-    desc: "We prioritise secure design and best-practice workflows — small teams don't mean small protection.",
+    title: "Reduce Security Risks",
+    desc: "Protect your business from preventable tech risks with smart, secure setups built from day one.",
     Icon: SecurityIcon,
   },
   {
-    title: "Dedicated Support",
-    desc: "Founder-led onboarding and post-launch support so you never feel left behind.",
+    title: "Never Be Left Alone",
+    desc: "Avoid being stranded after launch — get hands-on support whenever you need it.",
     Icon: SupportIcon,
   },
   {
-    title: "Fast Execution",
-    desc: "Rapid prototyping and iterative delivery: get working solutions faster and iterate with your users.",
+    title: "Save Weeks of Time",
+    desc: "Skip long corporate timelines. We deliver fast so your business doesn’t slow down.",
     Icon: SpeedIcon,
   },
 ];
+
 
 function WhyChooseZephrika() {
   const theme = useTheme();
 
   return (
     <Hero component="section">
-      <HeroContent maxWidth="lg">
+      <HeroContent maxWidth="lg" >
         <Typography variant="h2" sx={{ fontWeight: 800, mb: 1 }}>
           Why Choose Zephrika?
         </Typography>
@@ -131,8 +131,8 @@ function WhyChooseZephrika() {
         <Box sx={{ mt: 6 }}>
           <Grid container spacing={3}>
             {reasons.map((r, idx) => (
-              <Grid key={r.title} item xs={12} sm={6} md={4}>
-                <GlassCard>
+              <Grid key={r.title} item xs={12} sm={6} md={4} sx={{display: "flex"}}>
+                <GlassCard sx={{flexGrow:1 }}>
                   <IconSquare>
                     <r.Icon sx={{ fontSize: 28 }} />
                   </IconSquare>

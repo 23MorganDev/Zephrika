@@ -35,11 +35,11 @@ import MaintenanceIcon from "@mui/icons-material/BuildCircle";
 import logo from "../../assets/images/zephrika-logo.png";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: "transparent",// more transparent
-  backdropFilter: "blur(16px) saturate(180%)",
+  backgroundColor: "transparent",
+  backdropFilter: "none",
   WebkitBackdropFilter: "blur(16px) saturate(180%)",
-  borderBottom: "1px solid rgba(255, 255, 255, 0.25)", // frosted border
-  boxShadow: "0 6px 20px rgba(0, 0, 0, 0.12)", // soft glass shadow
+  borderBottom: "1px solid rgba(255, 255, 255, 0.25)",
+  boxShadow: "0 6px 20px rgba(0, 0, 0, 0.12)",
   transition: "all 0.3s ease",
 }));
 
@@ -70,7 +70,7 @@ function Header() {
 
   const toggleDrawer = (open) => () => setDrawerOpen(open);
 
- 
+
   const services = [
     { label: "Web Design", icon: <WebIcon />, to: "/services/web-design", type: "route" },
     { label: "Digital Marketing", icon: <MarketingIcon />, to: "/services/digital-marketing", type: "route" },
@@ -89,8 +89,26 @@ function Header() {
   ];
 
   return (
-    <StyledAppBar position="sticky">
-      <StyledToolbar>
+    <StyledAppBar position="fixed"
+      sx={{
+        ...(isMobile
+          ? {
+            // MOBILE NAVBAR 
+            backgroundColor: "rgba(255, 255, 255, 1)",
+            backdropFilter: "none",
+            borderBottom: "none",
+            boxShadow: "none",
+          }
+          : {
+            // DESKTOP NAVBAR 
+            backgroundColor: "rgba(255,255,255,0.05)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
+            borderBottom: "1px solid rgba(255,255,255,0.1)",
+            boxShadow: "0 6px 20px rgba(0, 0, 0, 0.12)",
+          }),
+      }}>
+      <StyledToolbar >
 
         <Box display="flex" alignItems="center">
           <RouterLink to="/">
@@ -104,7 +122,7 @@ function Header() {
             variant="h6"
             sx={{
               fontWeight: 700,
-              color: theme.palette.primary.main,
+              color: theme.palette.primary.contrastText,
               fontFamily: "Georgia, serif",
               fontStyle: "italic",
             }}
@@ -159,7 +177,7 @@ function Header() {
                               sx={{
                                 display: "flex",
                                 alignItems: "center",
-                                color: "black",
+                                color: theme.palette.primary.contrastText,
                                 p: 1,
                                 borderRadius: "8px",
                                 textDecoration: "none",
@@ -212,7 +230,7 @@ function Header() {
             {/* Contact Us button */}
             <Button
               variant="contained"
-              href="mailto:morganmuthee1@gmail.com"
+              href="mailto:zephrikatechnologies@gmail.com"
               sx={{
                 ml: 3,
                 backgroundColor: theme.palette.secondary.main,

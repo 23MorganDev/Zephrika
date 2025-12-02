@@ -8,8 +8,6 @@ import Services from "../Services/Services.jsx";
 import ContactInformation from "../Contact/Contact.jsx";
 import WhyChooseZephrika from "../Why_Zephrika/Why_Zephrika.jsx";
 
-// Hero Section Styles
-
 
 // == Hero Wrapper ==
 const HeroWrapper = styled(Box)(({ theme }) => ({
