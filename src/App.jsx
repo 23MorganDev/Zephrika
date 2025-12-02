@@ -11,7 +11,7 @@ import DigitalMarketing from './components/Services/DigitalMarketing.jsx'
 import Footer from './components/Footer/Footer.jsx'
 
 
-{/*import SocialMediaManagement from './components/Services/socialMediaManagement.jsx'
+{/*
 import AIAssistantsDevelopment from './components/Services/aiAssistantsDevelopment.jsx'
 import WebBasedPOSSystems from './components/Services/webBasedPOSSystems.jsx'
 import ITSupport from './components/Services/itSupport.jsx'
@@ -36,7 +36,7 @@ function App() {
 
           <Route path='/contact' element={<ContactInformation />} />
         </Routes>
-      </Router> 
+      </Router>
 
 
     </>
@@ -45,13 +45,3 @@ function App() {
 }
 
 export default App
-
-
-          {/* ----<Route path='/services/graphic-design' element={<GraphicDesign />} />
-
-          <Route path='/services/social-media-management' element={<SocialMediaManagement />} />
-          <Route path='/services/ai-assistants' element={<AIAssistantsDevelopment />} />
-          <Route path='/services/pos-systems' element={<WebBasedPOSSystems />} />
-          <Route path='/services/it-support' element={<ITSupport />} />
-          <Route path='/services/web-hosting' element={<WebHosting />} />
-          <Route path='/services/website-maintenance' element={<WebsiteMaintenance />} /> ---*/}
