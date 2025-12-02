@@ -29,7 +29,7 @@ function ContactPage() {
       icon: "fas fa-phone-alt",
     },
     {
-      title: "Drop Us a Line",
+      title: "Drop Us a Mail",
       details: "zephrikatechnologies.gmail.com",
       icon: "fas fa-envelope",
     },
