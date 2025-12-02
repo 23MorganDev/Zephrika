@@ -4,13 +4,13 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#4B2E83", // Deep purple
+      main: "#4B2E83",
       light: "#220ff5ff",
       dark: "#013064",
       contrastText: "#ffffff",
     },
     secondary: {
-      main: "#013064", // Navy blue
+      main: "#013064",
       light: "#4B6A9B",
       dark: "#001A33",
       contrastText: "#ffffff",
@@ -40,7 +40,7 @@ const theme = createTheme({
       card: "linear-gradient(145deg, rgba(255,255,255,0.85), rgba(255,255,255,0.65))",
       overlay: "linear-gradient(180deg, rgba(19,19,31,0.6), rgba(19,19,31,0.7))",
 
-      // Retained hero overlay for compatibility
+
       heroOverlay: "rgba(0,0,0,0.55)",
     },
 
