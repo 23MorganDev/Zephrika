@@ -93,7 +93,7 @@ const reasons = [
   },
   {
     title: "Skip Rigid Packages",
-    desc: "No more one-size-fits-all plans. Your tools scale only when you do — nothing extra.",
+    desc: "No more one-size-fits-all plans. Your tools scale only when you do nothing extra.",
     Icon: PlanIcon,
   },
   {
@@ -103,7 +103,7 @@ const reasons = [
   },
   {
     title: "Never Be Left Alone",
-    desc: "Avoid being stranded after launch — get hands-on support whenever you need it.",
+    desc: "Avoid being stranded after launch get hands-on support whenever you need it.",
     Icon: SupportIcon,
   },
   {
