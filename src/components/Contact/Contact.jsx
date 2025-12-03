@@ -11,11 +11,45 @@ import {
 import { Send } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
 import backgroundImage from "../../assets/images/c2.jpg";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Footer from "../Footer/Footer.jsx";
 
 function ContactPage() {
   const theme = useTheme();
+
+  const [status, setStatus] = React.useState(null);
+  const [loading, setStatusLoading] = React.useState(false);
+
+  const handleFormSubmit = async (e) => {
+
+    e.preventDefault();
+    setStatusLoading(true);
+    setStatus(null);
+
+    try {
+      const formData = new FormData(e.target);
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus({ type: "success", message: "Message sent successfully!" });
+        e.target.reset();
+      } else {
+        setStatus({ type: "error", message: "Something went wrong. Please try again." });
+      }
+    } catch (err) {
+      setStatus({ type: "error", message: "Network error. Please try again later." });
+    } finally {
+      setStatusLoading(false);
+    }
+
+    setTimeout(() => setStatus(null), 6000);
+  }
 
   const contactInfo = [
     {
@@ -212,32 +246,75 @@ function ContactPage() {
                 Send Us a Message
               </Typography>
 
-              <form
-                action="https://api.web3forms.com/submit"
-                method="POST"
-                style={{ width: "100%" }}
-              >
+              {/* Success / Error Alerts */}
+              <AnimatePresence>
+                {status === "success" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    style={{
+                      marginBottom: 20,
+                      padding: "15px 20px",
+                      borderRadius: 10,
+                      background: "#d4edda",
+                      color: "#155724",
+                      borderLeft: "5px solid #28a745",
+                      fontWeight: 500,
+                    }}
+                  >
+                    ✅ Your message has been sent successfully!
+                  </motion.div>
+                )}
 
-                {/* Web3Forms Access Key */}
-                <input type="hidden" name="access_key" value="21041e22-abf5-4f81-8256-13ad92bbff15" />
+                {status === "error" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    style={{
+                      marginBottom: 20,
+                      padding: "15px 20px",
+                      borderRadius: 10,
+                      background: "#f8d7da",
+                      color: "#721c24",
+                      borderLeft: "5px solid #dc3545",
+                      fontWeight: 500,
+                    }}
+                  >
+                    ❌ Failed to send message. Please try again.
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-                {/* Anti-spam honeypot*/}
+              <form onSubmit={handleFormSubmit} style={{ width: "100%" }}>
+                {/* Access Key */}
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="21041e22-abf5-4f81-8256-13ad92bbff15"
+                />
+
+                {/* Anti-spam honeypot */}
                 <input type="checkbox" name="botcheck" style={{ display: "none" }} />
-
 
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
                     <TextField label="Full Name" name="name" fullWidth required />
                   </Grid>
+
                   <Grid item xs={12} md={6}>
-                    <TextField label="Email Address" type="email" name="email" fullWidth required />
+                    <TextField label="Email Address" name="email" type="email" fullWidth required />
                   </Grid>
+
                   <Grid item xs={12} md={6}>
-                    <TextField label="Phone Number" type="tel" name="phone" fullWidth />
+                    <TextField label="Phone Number" name="phone" type="tel" fullWidth />
                   </Grid>
+
                   <Grid item xs={12} md={6}>
                     <TextField label="Subject" name="subject" fullWidth />
                   </Grid>
+
                   <Grid item xs={12}>
                     <TextField
                       label="Your Message"
@@ -248,12 +325,14 @@ function ContactPage() {
                       required
                     />
                   </Grid>
+
                   <Grid item xs={12} textAlign="center">
                     <Button
                       type="submit"
                       variant="contained"
                       size="large"
-                      endIcon={<Send />}
+                      endIcon={!loading && <Send />}
+                      disabled={loading}
                       sx={{
                         px: 5,
                         py: 1.5,
@@ -267,13 +346,14 @@ function ContactPage() {
                         },
                       }}
                     >
-                      Send Message
+                      {loading ? "Sending..." : "Send Message"}
                     </Button>
                   </Grid>
                 </Grid>
               </form>
             </Box>
           </motion.div>
+
         </Box>
       </Container>
 
