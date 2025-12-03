@@ -165,7 +165,7 @@ function ContactPage() {
                     />
                     <Typography
                       variant="h6"
-                      sx={{ fontWeight: 600, mt: 2, mb: 1 }}
+                      sx={{ fontWeight: 600, mt: 2, mb: 1, color: theme.palette.primary.main }}
                     >
                       {item.title}
                     </Typography>
@@ -212,50 +212,66 @@ function ContactPage() {
                 Send Us a Message
               </Typography>
 
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
-                  <TextField label="Full Name" fullWidth required />
+              <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                style={{ width: "100%" }}
+              >
+
+                {/* Web3Forms Access Key */}
+                <input type="hidden" name="access_key" value="21041e22-abf5-4f81-8256-13ad92bbff15" />
+
+                {/* Anti-spam honeypot*/}
+                <input type="checkbox" name="botcheck" style={{ display: "none" }} />
+
+
+                <Grid container spacing={3}>
+                  <Grid item xs={12} md={6}>
+                    <TextField label="Full Name" name="name" fullWidth required />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <TextField label="Email Address" type="email" name="email" fullWidth required />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <TextField label="Phone Number" type="tel" name="phone" fullWidth />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <TextField label="Subject" name="subject" fullWidth />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      label="Your Message"
+                      name="message"
+                      multiline
+                      rows={5}
+                      fullWidth
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12} textAlign="center">
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      size="large"
+                      endIcon={<Send />}
+                      sx={{
+                        px: 5,
+                        py: 1.5,
+                        borderRadius: "50px",
+                        fontSize: "1.1rem",
+                        fontWeight: 600,
+                        background: theme.palette.gradients.primary,
+                        color: theme.palette.primary.contrastText,
+                        "&:hover": {
+                          background: theme.palette.gradients.primaryHover,
+                        },
+                      }}
+                    >
+                      Send Message
+                    </Button>
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField label="Email Address" type="email" fullWidth required />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField label="Phone Number" type="tel" fullWidth />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField label="Subject" fullWidth />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    label="Your Message"
-                    multiline
-                    rows={5}
-                    fullWidth
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12} textAlign="center">
-                  <Button
-                    variant="contained"
-                    size="large"
-                    endIcon={<Send />}
-                    sx={{
-                      px: 5,
-                      py: 1.5,
-                      borderRadius: "50px",
-                      fontSize: "1.1rem",
-                      fontWeight: 600,
-                      background: theme.palette.gradients.primary,
-                      color: theme.palette.primary.contrastText,
-                      "&:hover": {
-                        background: theme.palette.gradients.primaryHover,
-                      },
-                    }}
-                  >
-                    Send Message
-                  </Button>
-                </Grid>
-              </Grid>
+              </form>
             </Box>
           </motion.div>
         </Box>
