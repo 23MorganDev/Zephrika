@@ -37,10 +37,10 @@ function ContactPage() {
       const data = await res.json();
 
       if (data.success) {
-        setStatus({ type: "success", message: "Message sent successfully!" });
+        setStatus("success");
         e.target.reset();
       } else {
-        setStatus({ type: "error", message: "Something went wrong. Please try again." });
+        setStatus("error");
       }
     } catch (err) {
       setStatus({ type: "error", message: "Network error. Please try again later." });
@@ -133,6 +133,7 @@ function ContactPage() {
         }}
       >
         <Box sx={{ position: "relative", zIndex: 1 }}>
+
           {/* HEADING */}
           <Box sx={{ textAlign: "center", mb: 6 }}>
             <Typography
@@ -257,9 +258,9 @@ function ContactPage() {
                       marginBottom: 20,
                       padding: "15px 20px",
                       borderRadius: 10,
-                      background: "#d4edda",
-                      color: "#155724",
-                      borderLeft: "5px solid #28a745",
+                      background: theme.palette.background.light,
+                      color: theme.palette.success.main,
+                      borderLeft: theme.palette.success.main,
                       fontWeight: 500,
                     }}
                   >
@@ -276,9 +277,9 @@ function ContactPage() {
                       marginBottom: 20,
                       padding: "15px 20px",
                       borderRadius: 10,
-                      background: "#f8d7da",
-                      color: "#721c24",
-                      borderLeft: "5px solid #dc3545",
+                      background: theme.palette.background.light,
+                      color: theme.palette.failure.main,
+                      borderLeft: theme.palette.failure.borderLeft,
                       fontWeight: 500,
                     }}
                   >
@@ -353,7 +354,6 @@ function ContactPage() {
               </form>
             </Box>
           </motion.div>
-
         </Box>
       </Container>
 
