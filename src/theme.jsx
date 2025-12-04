@@ -1,5 +1,6 @@
 
 import { createTheme } from "@mui/material/styles";
+import { borderLeft } from "@mui/system";
 
 const theme = createTheme({
   palette: {
@@ -22,7 +23,15 @@ const theme = createTheme({
     background: {
       default: "#f9fafc",
       paper: "#ffffff",
+      light: "rgba(8, 74, 180, 1)",
       gradient: "linear-gradient(135deg, #3d1f79ff 0%, #013064 100%)",
+    },
+    success:{
+      main: "#220ff5ff",
+    },
+    failure:{
+      main: "#721c24",
+      borderLeft: "5px solid #dc3545"
     },
 
     // Extended gradients
@@ -35,12 +44,8 @@ const theme = createTheme({
       sectionDark: "linear-gradient(180deg, #4B2E83 0%, #013064 100%)",
       surface: "linear-gradient(135deg, #FFFFFF 0%, #f7f7f7 100%)",
       surfaceAlt: "linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%)",
-
-
       card: "linear-gradient(145deg, rgba(255,255,255,0.85), rgba(255,255,255,0.65))",
       overlay: "linear-gradient(180deg, rgba(19,19,31,0.6), rgba(19,19,31,0.7))",
-
-
       heroOverlay: "rgba(0,0,0,0.55)",
     },
 
