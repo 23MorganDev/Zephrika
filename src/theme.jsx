@@ -23,11 +23,12 @@ const theme = createTheme({
     background: {
       default: "#f9fafc",
       paper: "#ffffff",
-      light: "rgba(8, 74, 180, 1)",
+      light: "#d4edda",
       gradient: "linear-gradient(135deg, #3d1f79ff 0%, #013064 100%)",
     },
     success:{
-      main: "#220ff5ff",
+      main: "#155724",
+      borderLeft: "5px solid #28a745",
     },
     failure:{
       main: "#721c24",
