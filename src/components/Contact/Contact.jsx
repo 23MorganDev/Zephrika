@@ -254,17 +254,21 @@ function ContactPage() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
-                    style={{
-                      marginBottom: 20,
-                      padding: "15px 20px",
-                      borderRadius: 10,
-                      background: theme.palette.background.light,
-                      color: theme.palette.success.main,
-                      borderLeft: theme.palette.success.main,
-                      fontWeight: 500,
-                    }}
                   >
-                    ✅ Your message has been sent successfully!
+                    <Box
+                      sx={{
+                        mb: 2,
+                        p: { xs: 1.5, sm: 2 },
+                        borderRadius: 2,
+                        background: theme.palette.background.paper,
+                        color: theme.palette.success.main,
+                        borderLeft: `5px solid ${theme.palette.success.main}`,
+                        fontSize: { xs: "0.85rem", sm: "1rem" },
+                        fontWeight: 500,
+                      }}
+                    >
+                      ✅ Your message has been sent successfully!
+                    </Box>
                   </motion.div>
                 )}
 
@@ -273,17 +277,21 @@ function ContactPage() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
-                    style={{
-                      marginBottom: 20,
-                      padding: "15px 20px",
-                      borderRadius: 10,
-                      background: theme.palette.background.light,
-                      color: theme.palette.failure.main,
-                      borderLeft: theme.palette.failure.borderLeft,
-                      fontWeight: 500,
-                    }}
                   >
-                    ❌ Failed to send message. Please try again.
+                    <Box
+                      sx={{
+                        mb: 2,
+                        p: { xs: 1.5, sm: 2 },
+                        borderRadius: 2,
+                        background: theme.palette.background.paper,
+                        color: theme.palette.error.main,
+                        borderLeft: `5px solid ${theme.palette.error.main}`,
+                        fontSize: { xs: "0.85rem", sm: "1rem" },
+                        fontWeight: 500,
+                      }}
+                    >
+                      ❌ Failed to send message. Please try again.
+                    </Box>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -331,17 +339,18 @@ function ContactPage() {
                     <Button
                       type="submit"
                       variant="contained"
-                      size="large"
                       endIcon={!loading && <Send />}
                       disabled={loading}
                       sx={{
-                        px: 5,
-                        py: 1.5,
-                        borderRadius: "50px",
-                        fontSize: "1.1rem",
+                        px: { xs: 3, sm: 4, md: 5 },
+                        py: { xs: 1, sm: 1.2, md: 1.5 },
+                        borderRadius: { xs: "30px", md: "50px" },
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
                         fontWeight: 600,
+                        minWidth: { xs: "140px", sm: "180px" },
                         background: theme.palette.gradients.primary,
                         color: theme.palette.primary.contrastText,
+                        transition: "0.3s ease",
                         "&:hover": {
                           background: theme.palette.gradients.primaryHover,
                         },
@@ -349,6 +358,7 @@ function ContactPage() {
                     >
                       {loading ? "Sending..." : "Send Message"}
                     </Button>
+
                   </Grid>
                 </Grid>
               </form>
