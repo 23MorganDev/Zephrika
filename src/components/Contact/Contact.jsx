@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
@@ -17,39 +17,89 @@ import Footer from "../Footer/Footer.jsx";
 function ContactPage() {
   const theme = useTheme();
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  })
+
   const [status, setStatus] = React.useState(null);
-  const [loading, setStatusLoading] = React.useState(false);
+  const [errors, setErrors] = React.useState({});
+  const [loading, setLoading] = React.useState(false);
+
+  const validate = () => {
+    let tempErrors = {};
+if (!/^[A-Za-z]+(?:\s+[A-Za-z]+)*$/.test(formData.name) || formData.name.length < 4 || formData.name.length > 20) {
+  tempErrors.name = "Enter a valid name (4–12 letters, spaces allowed).";
+}
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
+      tempErrors.email = "Invalid email format.";
+    }
+    if (formData.phone && !/^\d+$/.test(formData.phone)) {
+      tempErrors.phone = "Phone must contain only numbers, no spaces.";
+    }
+    if (!formData.subject) tempErrors.subject = "Subject is required.";
+    if (!formData.message) tempErrors.message = "Message is required.";
+
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
 
   const handleFormSubmit = async (e) => {
-
     e.preventDefault();
-    setStatusLoading(true);
-    setStatus(null);
+    if (!validate()) {
+      setStatus("error");
+      return;
+    }
 
+    setLoading(true);
+
+    //submit vakidated form data from the state instead of the DOM
     try {
-      const formData = new FormData(e.target);
+
+      const payload = {
+        access_key: "21041e22-abf5-4f81-8256-13ad92bbff15",
+        botcheck: "",
+        name:formData.name,
+        email:formData.email,
+        phone:formData.phone,
+        subject:formData.subject,
+        message:formData.message
+
+      }
+      const formPayload = new FormData();
+      Object.entries(payload).forEach(([key, value]) => {
+        formPayload.append(key, value);
+      });
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData,
+        body: formPayload,
       });
-
       const data = await res.json();
 
       if (data.success) {
         setStatus("success");
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
         e.target.reset();
       } else {
         setStatus("error");
       }
-    } catch (err) {
-      setStatus({ type: "error", message: "Network error. Please try again later." });
+    } catch {
+      setStatus("error");
     } finally {
-      setStatusLoading(false);
+      setLoading(false);
     }
+  };
 
-    setTimeout(() => setStatus(null), 6000);
-  }
 
   const contactInfo = [
     {
@@ -297,31 +347,42 @@ function ContactPage() {
               </AnimatePresence>
 
               <form onSubmit={handleFormSubmit} style={{ width: "100%" }}>
-                {/* Access Key */}
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="21041e22-abf5-4f81-8256-13ad92bbff15"
-                />
-
-                {/* Anti-spam honeypot */}
-                <input type="checkbox" name="botcheck" style={{ display: "none" }} />
 
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
-                    <TextField label="Full Name" name="name" fullWidth required />
+                    <TextField label="Full Name"
+                      name="name" fullWidth
+                      required value={formData.name}
+                      onChange={handleChange}
+                      error={!!errors.name}
+                      helperText={errors.name} />
                   </Grid>
 
                   <Grid item xs={12} md={6}>
-                    <TextField label="Email Address" name="email" type="email" fullWidth required />
+                    <TextField label="Email Address"
+                      name="email"
+                      type="email"
+                      fullWidth required value={formData.email}
+                      onChange={handleChange}
+                      error={!!errors.email}
+                      helperText={errors.email} />
                   </Grid>
 
                   <Grid item xs={12} md={6}>
-                    <TextField label="Phone Number" name="phone" type="tel" fullWidth />
+                    <TextField label="Phone Number"
+                      name="phone"
+                      type="tel"
+                      fullWidth value={formData.phone}
+                      onChange={handleChange}
+                      error={!!errors.phone}
+                      helperText={errors.phone} />
                   </Grid>
 
                   <Grid item xs={12} md={6}>
-                    <TextField label="Subject" name="subject" fullWidth />
+                    <TextField label="Subject" name="subject" fullWidth value={formData.subject}
+                      onChange={handleChange}
+                      error={!!errors.subject}
+                      helperText={errors.subject} />
                   </Grid>
 
                   <Grid item xs={12}>
@@ -332,6 +393,10 @@ function ContactPage() {
                       rows={5}
                       fullWidth
                       required
+                      value={formData.message}
+                      onChange={handleChange}
+                      error={!!errors.message}
+                      helperText={errors.message}
                     />
                   </Grid>
 
