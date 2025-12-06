@@ -199,6 +199,7 @@ function Header() {
                                   fontWeight: 500,
                                   fontSize: "0.95rem",
                                   fontFamily: "Inter, sans-serif",
+                                  color: theme.palette.primary.main,
                                 }}
                               >
                                 {srv.label}
