@@ -67,8 +67,8 @@ function WebDesign() {
         component='section'
         sx={{
           py: { xs: 6, sm: 10 },
-          background: 'rgba(255, 255, 255, 0.05)', // subtle transparent overlay
-          backdropFilter: 'blur(20px)', // the glass blur
+          background: 'rgba(255, 255, 255, 0.05)', 
+          backdropFilter: 'blur(20px)', 
           WebkitBackdropFilter: 'blur(20px)',
           borderTop: '1px solid rgba(255, 255, 255, 0.1)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
