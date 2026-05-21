@@ -24,13 +24,8 @@ function ServicesPage() {
 
   const services = [
     { title: "Website Development", description: "Modern, responsive and fast-loading sites tailored for your business.", icon: <LanguageIcon sx={{ fontSize: 48 }} /> },
-    { title: "Mobile App Development", description: "Custom Android & iOS apps crafted to elevate customer experience.", icon: <PhoneIphoneIcon sx={{ fontSize: 48 }} /> },
     { title: "UI/UX & Branding", description: "Beautiful interfaces and brand identities that stand out.", icon: <BrushIcon sx={{ fontSize: 48 }} /> },
-    { title: "Web-Based PoS Systems", description: "Secure, cloud-ready point-of-sale systems for growing businesses.", icon: <SecurityIcon sx={{ fontSize: 48 }} /> },
     { title: "Cloud Integration & Management", description: "We serve as your intermediary—helping you choose, set up, and manage the best cloud or hosting provider for your needs. We do not host infrastructure ourselves; instead, we ensure you get reliable, scalable, and cost‑effective solutions from trusted providers.", icon: <CloudIcon sx={{ fontSize: 48 }} /> },
-    { title: "Data & AI Solutions", description: "AI automation, data processing, and custom AI agents for efficiency.", icon: <StorageIcon sx={{ fontSize: 48 }} /> },
-    { title: "IT Support & Maintenance", description: "Reliable on-demand tech support for SMEs.", icon: <SupportAgentIcon sx={{ fontSize: 48 }} /> },
-    { title: "Custom Software Development", description: "Fully custom applications built around your unique needs.", icon: <CodeIcon sx={{ fontSize: 48 }} /> },
   ];
 
 
