@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #300a24;
+  --foreground: #ffffff;
+  --primary: #E95420;
+  --secondary: #772953;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #300a24;
+  color: #ffffff;
+}
+
+/* Custom scrollbar for Ubuntu theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #300a24;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #772953;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E95420;
+}
